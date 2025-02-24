@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@custom-variant dark (&:is(.dark *));
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -64,5 +66,14 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
