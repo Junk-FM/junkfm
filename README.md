@@ -1,7 +1,9 @@
 # Junk FM - Upcoming Site Update 2025
 
-React + Typescript + Vite<br />
-Mantine V6<br />
+- React + Typescript + Vite<br />
+- ~~Mantine V6~~ _(removing as of 2/24/25 to try...)_<br />
+- [Aceternity UI](https://ui.aceternity.com/)<br />
+- [shadcn UI](https://ui.shadcn.com/docs/installation/manual)
 
 Additional deps and libraries = _BRING IT!_ ...just update the above
 
@@ -9,7 +11,7 @@ Additional deps and libraries = _BRING IT!_ ...just update the above
 
 Build progress can be viewed at [junkfm.netlify.app/](https://junkfm.netlify.app/). You can check out a feature branch from `main` or work on `main` directly. _Pushing changes while on `main` will automatically run the Netlify build and update the above URL after a few minutes_
 
-You can check the status of those builds at 
+You can check the status of those builds at
 
 For now, you can still check us out at [junkfm.com](https://junkfm.com).
 

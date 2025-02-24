@@ -1,10 +1,8 @@
-import { Box, Title } from '@mantine/core';
 import './App.css';
 
 function App() {
   return (
-    // Let's NOT use inline styling...I just have it in the placeholder
-    <Box
+    <div
       style={{
         backgroundColor: 'black',
         display: 'flex',
@@ -16,16 +14,10 @@ function App() {
         width: '100vw',
       }}
     >
-      <Title order={1} m={0} style={{ color: 'white' }}>
-        Junk FM
-      </Title>
-      <Title order={2} m={0} fw={400} style={{ color: 'white' }}>
-        This is it. The site is done.
-      </Title>
-      <Title order={5} m={0} fw={300} style={{ color: 'white' }}>
-        JK. Coming soon.
-      </Title>
-    </Box>
+      <h1 style={{ color: 'white' }}>Junk FM</h1>
+      <h4 style={{ color: 'white' }}>This is it. The site is done.</h4>
+      <h5 style={{ color: 'white' }}>JK. Coming soon.</h5>
+    </div>
   );
 }
 
