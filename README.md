@@ -1,7 +1,7 @@
 # Junk FM - Upcoming Site Update 2025
 
 React + Typescript + Vite<br />
-Mantine V6<br />
+~~Mantine V6~~ _(removed! trying this shadcn thing)_<br />
 
 Additional deps and libraries = _BRING IT!_ ...just update the above
 

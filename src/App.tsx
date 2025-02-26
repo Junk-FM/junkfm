@@ -1,31 +1,34 @@
-import { Box, Title } from '@mantine/core';
 import './App.css';
 
 function App() {
   return (
-    // Let's NOT use inline styling...I just have it in the placeholder
-    <Box
+    <div
       style={{
         backgroundColor: 'black',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        rowGap: '2rem',
         height: '100vh',
         width: '100vw',
       }}
     >
-      <Title order={1} m={0} style={{ color: 'white' }}>
-        Junk FM
-      </Title>
-      <Title order={2} m={0} fw={400} style={{ color: 'white' }}>
-        This is it. The site is done.
-      </Title>
-      <Title order={5} m={0} fw={300} style={{ color: 'white' }}>
-        JK. Coming soon.
-      </Title>
-    </Box>
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          rowGap: '1rem',
+          margin: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <h1 style={{ color: 'white', marginBlock: '0' }}>Header Text</h1>
+        <h2 style={{ color: 'white', marginBlock: '0' }}>This is it. The site is done.</h2>
+        <h3 style={{ color: 'white', marginBlock: '0' }}>JK. Coming soon.</h3>
+        <p style={{ color: 'white', marginBlock: '0' }}>
+          This is a paragraph. It's not very interesting.
+        </p>
+      </div>
+    </div>
   );
 }
 
