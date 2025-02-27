@@ -1,4 +1,4 @@
-import { Stack } from '@mantine/core';
+import { Stack, Title, Text } from '@mantine/core';
 import { useHomeStyles } from '.';
 
 export function Home() {
@@ -6,10 +6,9 @@ export function Home() {
 
   return (
     <Stack className={classes.homeStack}>
-      <h1>Header Text</h1>
-      <h2>This is it. The site is done.</h2>
-      <h3>JK. Coming soon.</h3>
-      <p>This is a paragraph. It's not very interesting.</p>
+      <Title order={1}>Header Text</Title>
+      <Title order={3}>This is it. The site is done.</Title>
+      <Text component="p">This is a paragraph. It's not very interesting.</Text>
     </Stack>
   );
 }

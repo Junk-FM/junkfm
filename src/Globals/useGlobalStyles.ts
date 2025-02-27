@@ -1,5 +1,5 @@
-import { createStyles } from '@mantine/core';
-import { MantineThemeOverride } from '@mantine/core';
+import { createStyles, MantineThemeOverride } from '@mantine/core';
+// TODO chroma import
 
 const BREAKPOINT_TOUCH = 800;
 
@@ -31,7 +31,7 @@ export const colors = {
 };
 
 export const globalTheme: MantineThemeOverride = {
-  globalStyles(theme) {
+  globalStyles() {
     return {
       ':root': {
         '--oswald': '"Oswald", sans-serif',
@@ -41,15 +41,22 @@ export const globalTheme: MantineThemeOverride = {
       },
 
       body: {
+        margin: 0,
+        padding: 0,
         backgroundColor: colors.black,
-        color: theme.colorScheme === 'dark' ? colors.white : colors.black,
-        fontFamily: 'Urbanist, sans-serif',
-        height: '100vh',
-        width: '100%',
+        color: colors.white,
+        fontFamily: '"Poppins", sans-serif',
+        height: '100dvh', // revisit
+        width: '100dvw', // revisit
         overflow: 'hidden',
         '& #root': {
           height: '100%',
           width: '100%',
+          backgroundColor: 'transparent', // revisit
+          '& h1, & h2': {
+            fontFamily: '"Oswald", sans-serif',
+            fontWeight: 700,
+          },
         },
       },
     };
@@ -96,9 +103,21 @@ export const globalTheme: MantineThemeOverride = {
 };
 
 export const useGlobalStyles = createStyles(() => ({
-  
   // App.tsx body wrapper
   bodyWrapper: {
-    background: colors.red,
+    background: colors.black,
+    minHeight: '100dvh',
+    width: '100dvw',
+    fontFamily: '"Poppins", sans-serif',
+    overflow: 'hidden',
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '& h1, & h2': {
+      fontFamily: '"Oswald", sans-serif',
+      fontWeight: 700,
+    },
   },
 }));

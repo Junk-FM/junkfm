@@ -1,23 +1,25 @@
 import { createStyles } from '@mantine/core';
-import { colors } from '../../global/useGlobalStyles';
+import { colors } from '../..';
 
 export const useHomeStyles = createStyles(() => ({
   homeStack: {
-    background: colors.purple,
+    background: "transparent",
+    width: 'fit-content',
+    height: 'fit-content',
     '& > *': {
       marginBlock: 0,
     },
     h1: {
-      color: colors.black,
+      color: colors.trueWhite,
     },
     h2: {
-      color: colors.darkGray,
+      color: colors.white,
     },
     h3: {
       color: colors.lightBlue,
     },
     p: {
-      color: colors.orange,
+      color: colors.lightGray,
     },
   },
 }));

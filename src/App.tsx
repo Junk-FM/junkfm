@@ -1,13 +1,15 @@
-import { Home } from './components';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import { Box } from '@mantine/core';
-import { useGlobalStyles } from './global/useGlobalStyles';
+import { Home, Contact, useGlobalStyles } from '@junkfm';
 
 function App() {
   const { classes: globalClasses } = useGlobalStyles();
   return (
-    <Box h="100vh" w="100vw" className={globalClasses.bodyWrapper}>
-      <Home />
+    <Box className={globalClasses.bodyWrapper} id="outermost-wrapper">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </Box>
   );
 }

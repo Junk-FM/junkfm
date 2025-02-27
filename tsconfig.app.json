@@ -20,7 +20,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* components root - import anything from @junkfm */
+    "baseUrl": ".",
+    "paths": {
+      "@junkfm": ["src/index.ts"]
+    },
+
+    
   },
   "include": ["src"]
 }
