@@ -9,14 +9,27 @@ export const useHomeStyles = createStyles(() => ({
     '& > *': {
       marginBlock: 0,
     },
-    h1: {
-      color: colors.white,
-    },
     h4: {
       color: colors.lightBlue,
     },
     p: {
       color: colors.yellow,
     },
+  },
+  
+  junkFmLogo: {
+    display: 'inline-block',
+    width: 'fit-content',
+    h1: {
+      lineHeight: '0.95em',
+      color: colors.white,
+      display: 'inline-block',
+    },
+  },
+  
+  logoLine: {
+    width: '100%',
+    height: '0.4em',
+    backgroundColor: colors.red,
   },
 }));
