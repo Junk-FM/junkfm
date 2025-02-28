@@ -6,11 +6,11 @@ export function Home() {
 
   return (
     <Stack className={classes.homeStack}>
-      <Box className={classes.junkFmLogo}>
+      <Stack className={classes.junkFmLogo}>
         <Box className={classes.logoLine} />
         <Title order={1}>JUNK FM</Title>
         <Box className={classes.logoLine} />
-      </Box>
+      </Stack>
       <Title order={4}>This is it. The site is done.</Title>
       <Text component="p">This is a paragraph. It's not very interesting.</Text>
     </Stack>
