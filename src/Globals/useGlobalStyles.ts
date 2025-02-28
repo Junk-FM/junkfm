@@ -1,5 +1,5 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
-// TODO chroma import
+// import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 800;
 
