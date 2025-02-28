@@ -9,6 +9,7 @@ export const useHomeStyles = createStyles(() => ({
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    lineHeight: '1.3em',
     '& > *': {
       marginBlock: 0,
     },
