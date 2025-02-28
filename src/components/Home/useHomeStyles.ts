@@ -10,16 +10,13 @@ export const useHomeStyles = createStyles(() => ({
       marginBlock: 0,
     },
     h1: {
-      color: colors.trueWhite,
-    },
-    h2: {
       color: colors.white,
     },
-    h3: {
+    h4: {
       color: colors.lightBlue,
     },
     p: {
-      color: colors.lightGray,
+      color: colors.yellow,
     },
   },
 }));

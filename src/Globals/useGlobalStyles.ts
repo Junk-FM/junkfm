@@ -11,23 +11,15 @@ export const mq = {
 };
 
 export const colors = {
-  black: '#191716', // Eerie black
-  white: '#F9F9F9', // Seasalt
-  red: '#89043D', // Claret
-  orange: '#FF571F', // Coquelicot
-  gold: '#F7B538', // Xanthous
-  yellow: '#FFFD77', // Icterine
-  green: '#20FC8F', // Spring green
-  emerald: '#1FAD9D', // Keppel
-  lightBlue: '#51E5FF', // Electric blue
-  darkBlue: '#235789', // Lapis lazuli
-  purple: '#9F6AA0', // Pomp and Power
-  pink: '#F2B5D4', // Lavender pink
-  lightGray: '#DBDFE6', // Platinum
-  gray: '#95B2B8', // Cadet gray
-  darkGray: '#4F5D75', // Payne's grey
   trueBlack: '#000000', // True black
-  trueWhite: '#FFFFFF', // True white
+  black: '#12130F', // Night
+  darkBlue: '#054A91', // Polynesian blue
+  lightBlue: '#81A4CD', // Vista Blue
+  gray: '#DBE4EE', // Alice Blue
+  white: '#FFFFFF', // White
+  yellow: '#FFFD98', // Mindaro
+  mustard: '#ECD444', // Citrine
+  red: '#C42021', // Fire engine red
 };
 
 export const globalTheme: MantineThemeOverride = {
@@ -43,21 +35,12 @@ export const globalTheme: MantineThemeOverride = {
       body: {
         margin: 0,
         padding: 0,
-        backgroundColor: colors.black,
+        backgroundColor: colors.lightBlue,
         color: colors.white,
         fontFamily: '"Poppins", sans-serif',
         height: '100dvh', // revisit
         width: '100dvw', // revisit
         overflow: 'hidden',
-        '& #root': {
-          height: '100%',
-          width: '100%',
-          backgroundColor: 'transparent', // revisit
-          '& h1, & h2': {
-            fontFamily: '"Oswald", sans-serif',
-            fontWeight: 700,
-          },
-        },
       },
     };
   },
@@ -115,9 +98,40 @@ export const useGlobalStyles = createStyles(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    '& h1, & h2': {
+    h1: {
       fontFamily: '"Oswald", sans-serif',
+      fontSize: 'clamp(3rem, 7vw, 4rem)',
       fontWeight: 700,
+    },
+    h2: {
+      fontFamily: '"Oswald", sans-serif',
+      fontSize: 'clamp(2rem, 5vw, 3rem)',
+      fontWeight: 600,
+    },
+    h3: {
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+      fontWeight: 500,
+    },
+    h4: {
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+      fontWeight: 400,
+    },
+    h5: {
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
+      fontWeight: 400,
+    },
+    h6: {
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: 'clamp(0.85rem, 1.1125vw, 1rem)',
+      fontWeight: 400,
+    },
+    p: {
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+      fontWeight: 400,
     },
   },
 }));
