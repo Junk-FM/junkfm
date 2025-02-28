@@ -3,9 +3,12 @@ import { colors } from '../..';
 
 export const useHomeStyles = createStyles(() => ({
   homeStack: {
-    background: "transparent",
+    background: 'transparent',
     width: 'fit-content',
     height: 'fit-content',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     '& > *': {
       marginBlock: 0,
     },
@@ -16,20 +19,6 @@ export const useHomeStyles = createStyles(() => ({
       color: colors.yellow,
     },
   },
-  
-  junkFmLogo: {
-    display: 'inline-block',
-    width: 'fit-content',
-    h1: {
-      lineHeight: '0.95em',
-      color: colors.white,
-      display: 'inline-block',
-    },
-  },
-  
-  logoLine: {
-    width: '100%',
-    height: '0.4em',
-    backgroundColor: colors.red,
-  },
+
+
 }));

@@ -100,7 +100,7 @@ export const useGlobalStyles = createStyles(() => ({
     justifyContent: 'center',
     h1: {
       fontFamily: '"Oswald", sans-serif',
-      fontSize: 'clamp(3rem, 7vw, 4rem)',
+      fontSize: 'clamp(4rem, 8vw, 5rem)',
       fontWeight: 700,
     },
     h2: {
