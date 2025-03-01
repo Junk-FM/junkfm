@@ -1,5 +1,4 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
-// import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 800;
 
@@ -86,7 +85,12 @@ export const globalTheme: MantineThemeOverride = {
 };
 
 export const useGlobalStyles = createStyles(() => ({
-  // App.tsx body wrapper
+  // ------------------------------------------------ //
+  // ------------------------------------------------ //
+  // --------- MAIN BODY WRAPPER + DEFAULTS --------- //
+  // ------------------------------------------------ //
+  // ------------------------------------------------ //
+
   bodyWrapper: {
     background: colors.black,
     minHeight: '100dvh',
@@ -133,5 +137,106 @@ export const useGlobalStyles = createStyles(() => ({
       fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
       fontWeight: 400,
     },
+  },
+
+  // ---------------------------------------- //
+  // ---------------------------------------- //
+  // --------- TEXT-RELATED THINGS  --------- //
+  // ---------------------------------------- //
+  // ---------------------------------------- //
+
+  oswald: {
+    fontFamily: '"Oswald", sans-serif',
+  },
+  poppins: {
+    fontFamily: '"Poppins", sans-serif',
+  },
+  tiltNeon: {
+    fontFamily: '"Tilt Neon", sans-serif',
+  },
+  balance: {
+    textWrap: 'balance',
+  },
+  pretty: {
+    textWrap: 'pretty',
+  },
+
+  // --------------------------------------------- //
+  // --------------------------------------------- //
+  // ----------- SECTIONS / CONTAINERS ----------- //
+  // --------------------------------------------- //
+  // --------------------------------------------- //
+
+  evenRow: {
+    paddingInline: 'max(5vw, (100vw - 1280px)/2)',
+  },
+
+  container: {
+    containerType: 'inline-size',
+  },
+
+  columnCenter: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  textContrastShadowSubtle: {
+    textShadow: `1px 1px 5px ${colors.black}16, -1px -1px 5px ${colors.black}16, 1px -1px 5px ${colors.black}16, -1px 1px 5px ${colors.black}16`,
+  },
+
+  textContrastShadow: {
+    textShadow: `1px 1px 6px ${colors.black}22, -1px -1px 6px ${colors.black}22, 1px -1px 6px ${colors.black}22, -1px 1px 6px ${colors.black}22`,
+  },
+
+  textContrastShadowHeavy: {
+    textShadow: `1px 1px 5px ${colors.black}30, -1px -1px 5px ${colors.black}30, 1px -1px 5px ${colors.black}30, -1px 1px 5px ${colors.black}30`,
+  },
+
+  // ----------------------------------------- //
+  // ----------------------------------------- //
+  // --------------- Z-INDEXES --------------- //
+  // ----------------------------------------- //
+  // ----------------------------------------- //
+
+  z0: {
+    zIndex: 0,
+  },
+  z1: {
+    zIndex: 1,
+  },
+  z2: {
+    zIndex: 2,
+  },
+  z3: {
+    zIndex: 3,
+  },
+  z4: {
+    zIndex: 4,
+  },
+  z5: {
+    zIndex: 5,
+  },
+  z6: {
+    zIndex: 6,
+  },
+  z7: {
+    zIndex: 7,
+  },
+  z8: {
+    zIndex: 8,
+  },
+  z9: {
+    zIndex: 9,
+  },
+  z10: {
+    zIndex: 10,
+  },
+  z15: {
+    zIndex: 15,
+  },
+  z20: {
+    zIndex: 20,
   },
 }));

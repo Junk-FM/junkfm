@@ -7,7 +7,7 @@ export function Home() {
   return (
     <Stack className={classes.homeStack}>
       <JunkFmLogo />
-      <Title order={4}>This is it. The site is done.</Title>
+      <Title order={5}>Destroying your favorite songs since 2010</Title>
       <Text component="p">This is a paragraph. It's not very interesting.</Text>
       <CommonButton />
     </Stack>

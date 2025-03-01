@@ -7,19 +7,14 @@ export const useHomeStyles = createStyles(() => ({
     width: 'fit-content',
     height: 'fit-content',
     textAlign: 'center',
-    alignItems: 'center',
     justifyContent: 'center',
     lineHeight: '1.3em',
-    '& > *': {
-      marginBlock: 0,
-    },
-    h4: {
+    h5: {
       color: colors.lightBlue,
+      fontWeight: 500,
     },
     p: {
       color: colors.yellow,
     },
   },
-
-
 }));
