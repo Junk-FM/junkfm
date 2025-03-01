@@ -1,7 +1,21 @@
 import { createStyles } from '@mantine/core';
-// import { colors } from '@junkfm';
+import { heroSectionBackgroundColor } from '@junkfm';
 
 export const useJunkFmLogoMaskStyles = createStyles(() => ({
+  // important - mask fill color, must match background of section
+  crucialMaskFill: {
+    fill: heroSectionBackgroundColor,
+  },
+
+  logoMaskColorFillFade: {
+    width: '99.85%', // spill on right - couldn't avoid
+    opacity: 1,
+    transition: 'opacity 2000ms ease-in-out',
+    '&.fadeColorFill': {
+      opacity: 0,
+    },
+  },
+
   junkFmLogoMaskWrapper: {
     position: 'relative',
     overflow: 'hidden',
@@ -15,9 +29,7 @@ export const useJunkFmLogoMaskStyles = createStyles(() => ({
   },
 
   video: {
-    width: '100%',
-    
-    
+    width: '99.85%', // spill on right - couldn't avoid
   },
   junkFmLogoMaskSvg: {
     position: 'absolute',
@@ -26,5 +38,4 @@ export const useJunkFmLogoMaskStyles = createStyles(() => ({
     height: 'auto',
     overflow: 'hidden',
   },
-
 }));

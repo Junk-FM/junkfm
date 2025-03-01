@@ -1,9 +1,20 @@
+import { useEffect, useState } from 'react';
 import { Box } from '@mantine/core';
 import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
 
 export function JunkFmLogoMask() {
-  const { classes } = useJunkFmLogoMaskStyles();
+  const [colorFillFade, setColorFillFade] = useState(false);
+  const { classes, cx } = useJunkFmLogoMaskStyles();
+
+  // on page load, after 1000ms time out, set a state to fade out item with class logoMaskColorFillFade
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setColorFillFade(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <Box className={classes.junkFmLogoMaskWrapper}>
@@ -18,10 +29,20 @@ export function JunkFmLogoMask() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <rect
+          // important - this fades on load
+          className={cx(
+            classes.logoMaskColorFillFade,
+            colorFillFade && 'fadeColorFill'
+          )}
+          width="100%"
+          height="100%"
+          fill={colors.white}
+        />
         <defs>
           <mask id="junkfm-mask">
-            <rect width="100%" height="100%" fill="white" />
-            <g id="Frame 1" clipPath="url(#clip0_888_196)">
+            <rect width="100%" height="100%" fill={colors.white} />
+            <g id="junk-mask-group" clipPath="url(#clip0_888_196)">
               <rect id="bottom-line" y="1144" width="2743" height="115" fill={colors.black} />
               <path
                 id="m-letter"
@@ -57,10 +78,15 @@ export function JunkFmLogoMask() {
             </g>
           </mask>
         </defs>
-        <rect width="100%" height="100%" fill={colors.black} mask="url(#junkfm-mask)" />
+        <rect
+          className={classes.crucialMaskFill}
+          width="100%"
+          height="100%"
+          mask="url(#junkfm-mask)"
+        />
         <defs>
           <clipPath id="clip0_888_196">
-            <rect width="2743" height="1434" fill="white" />
+            <rect width="2743" height="1434" fill={colors.white} />
           </clipPath>
         </defs>
       </svg>

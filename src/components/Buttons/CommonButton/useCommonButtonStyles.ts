@@ -1,22 +1,36 @@
 import { createStyles } from '@mantine/core';
 import { colors } from '@junkfm';
+import { CommonButtonProps } from '.';
 import chroma from 'chroma-js';
 
-const buttonColor = colors.lightBlue;
+// set up CommonButtonStylesProps as import of CommonButtonProps but omit buttonText
+export interface CommonButtonStylesProps extends Omit<CommonButtonProps, 'buttonText'> {}
 
-export const useCommonButtonStyles = createStyles(() => ({
-  commonButton: {
-    display: 'inline-block',
-    padding: '0.5rem 1rem',
-    borderRadius: '0.5rem',
-    backgroundColor: buttonColor,
-    fontWeight: 600,
-    color: colors.trueBlack,
-    cursor: 'pointer',
-    transition: 'background-color 150ms, color 150ms',
-    '&:hover': {
-      backgroundColor: chroma(buttonColor).darken(1.7).hex(),
-      color: colors.white,
+export const useCommonButtonStyles = createStyles(
+  (
+    _,
+    {
+      buttonColor = colors.lightBlue,
+      buttonHoverColor = chroma(buttonColor).darken(1.7).hex(),
+      buttonTextColor = colors.trueBlack,
+      buttonTextHoverColor,
+      buttonSize = 'xl',
+    }: CommonButtonStylesProps
+  ) => ({
+    commonButton: {
+      display: 'inline-block',
+      padding: '0.5em 1em',
+      borderRadius: '0.5rem',
+      backgroundColor: buttonColor,
+      fontWeight: 600,
+      fontSize: buttonSize === 'xs' ? '0.75rem' : buttonSize === 'sm' ? '0.875rem' : buttonSize === 'md' ? '1rem' : buttonSize === 'lg' ? '1.125rem' : buttonSize === 'xl' ? '1.25rem' : '1rem',
+      color: buttonTextColor,
+      cursor: 'pointer',
+      transition: 'background-color 150ms, color 150ms',
+      '&:hover': {
+        backgroundColor: buttonHoverColor,
+        color: buttonTextHoverColor,
+      },
     },
-  },
-}));
+  })
+);
