@@ -1,4 +1,4 @@
-import { Box, Title, Text } from '@mantine/core';
+import { Box, Title } from '@mantine/core';
 import { useHomeStyles, JunkFmLogoMask, CommonButton, colors } from '@junkfm';
 
 export function Home() {
