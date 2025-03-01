@@ -9,16 +9,14 @@ export function Home() {
     <Box className={cx(classes.homeWrapper)} id="home">
       <JunkFmLogoMask />
       <Box className={classes.homeContentWrapper}>
-        <Title order={5}>Destroying your favorite songs since 2010</Title>
-        {/* <Text component="p">This is a paragraph. It's not very interesting.</Text> */}
+        <Title order={4}>Destroying your favorite songs since 2010</Title>
         <CommonButton
           buttonText="BOOK US"
-          buttonSize="lg"
+          buttonSize="md"
           buttonColor={colors.lightBlue}
-          buttonHoverColor={colors.darkBlue}
           buttonTextColor={colors.black}
           buttonTextHoverColor={colors.white} 
-          outline
+          
         />
       </Box>
     </Box>

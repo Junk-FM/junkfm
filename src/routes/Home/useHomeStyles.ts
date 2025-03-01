@@ -10,13 +10,11 @@ export const useHomeStyles = createStyles(() => ({
   },
 
   homeContentWrapper: {
-
     textAlign: 'center',
-    h5: {
-      color: colors.white,
-      fontWeight: 600,
+    h4: {
+      color: colors.yellow,
+      fontWeight: 500,
       marginBlock: '0 0.75em',
     },
-
   },
 }));

@@ -11,7 +11,7 @@ export const useCommonButtonStyles = createStyles(
     _,
     {
       buttonColor = colors.lightBlue,
-      buttonHoverColor = chroma(buttonColor).darken(1.7).hex(),
+      buttonHoverColor = chroma(buttonColor).darken(1.6).hex(),
       buttonTextColor = colors.trueBlack,
       buttonTextHoverColor,
       buttonSize = 'xl',
@@ -20,14 +20,14 @@ export const useCommonButtonStyles = createStyles(
   ) => ({
     commonButton: {
       display: 'inline-block',
-      padding: '0.5em 1em',
+      padding: '0.5em 1.75em',
       borderRadius: '0.5rem',
       backgroundColor: outline ? 'transparent' : buttonColor,
       fontWeight: 600,
       fontSize: buttonSize === 'xs' ? '0.75rem' : buttonSize === 'sm' ? '0.875rem' : buttonSize === 'md' ? '1rem' : buttonSize === 'lg' ? '1.125rem' : buttonSize === 'xl' ? '1.25rem' : '1rem',
       color: outline ? buttonColor : buttonTextColor,
       cursor: 'pointer',
-      transition: 'background-color 150ms, color 150ms',
+      transition: 'background-color 100ms, color 100ms',
       border: outline ? `2px solid ${buttonColor}` : 'none',
       '&:hover': {
         backgroundColor: outline ? buttonColor : buttonHoverColor,
