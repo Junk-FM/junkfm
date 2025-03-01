@@ -3,7 +3,7 @@ import { colors } from '../..';
 
 export const useHomeStyles = createStyles(() => ({
   homeWrapper: {
-    lineHeight: '1.3em',
+    paddingInline: 'max(2vw, (100vw - 1280px)/2)',
     h5: {
       color: colors.lightBlue,
       fontWeight: 500,

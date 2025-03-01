@@ -166,8 +166,8 @@ export const useGlobalStyles = createStyles(() => ({
 
   responsiveRow: {
     paddingInline: 'max(6vw, (100vw - 1280px)/2)',
-    marginInline: 0,
-    width: '100%',
+    // marginInline: 0,
+    // width: '100%',
   },
 
   container: {
