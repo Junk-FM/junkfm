@@ -1,41 +1,91 @@
 import { createStyles } from '@mantine/core';
 import { heroSectionBackgroundColor } from '@junkfm';
 
-export const useJunkFmLogoMaskStyles = createStyles(() => ({
-  // important - mask fill color, must match background of section
-  crucialMaskFill: {
-    fill: heroSectionBackgroundColor,
-  },
+interface JunkFmLogoMaskStyles {
+  loadAnimationDuration: number;
+  fadeInVideoDuration: number;
+}
 
-  logoMaskColorFillFade: {
-    width: '99.85%', // spill on right - couldn't avoid
-    opacity: 1,
-    transition: 'opacity 2000ms ease-in-out',
-    '&.fadeColorFill': {
-      opacity: 0,
+export const useJunkFmLogoMaskStyles = createStyles(
+  (_, { loadAnimationDuration, fadeInVideoDuration }: JunkFmLogoMaskStyles) => ({
+    // ---------------------------------------------------- //
+    // ---------------------------------------------------- //
+    // ----------------- CRUCIAL FOR MASK ----------------- //
+    // ---------------------------------------------------- //
+    // ---------------------------------------------------- //
+
+    crucialMaskFill: {
+      fill: heroSectionBackgroundColor,
     },
-  },
 
-  junkFmLogoMaskWrapper: {
-    position: 'relative',
-    overflow: 'hidden',
-    height: 'auto',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    aspectRatio: '16 / 8.3',
-    flexDirection: 'column',
-  },
+    junkLogoMaskBacking: {
+      //deletelater need????
+    },
 
-  video: {
-    width: '99.85%', // spill on right - couldn't avoid
-  },
-  junkFmLogoMaskSvg: {
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-    height: 'auto',
-    overflow: 'hidden',
-  },
-}));
+    lettersMaskBacking: {
+      transform: 'translate(0, 80%)',
+
+      transition: `transform ${loadAnimationDuration * 1.2}ms ease-out 600ms, opacity ${fadeInVideoDuration}ms ease-out`,
+      '&.slideIn': {
+        transform: 'translate(0, 0)',
+        '&.fadeOut': {
+          opacity: 0,
+        },
+      },
+    },
+
+    bottomLineMaskBacking: {
+      transform: 'translateX(-110%)',
+      transition: `transform ${loadAnimationDuration}ms ease-out, opacity ${fadeInVideoDuration}ms ease-out`,
+      '&.slideIn': {
+        transform: 'translateX(0)',
+        '&.fadeOut': {
+          opacity: 0,
+        },
+      },
+    },
+
+    topLineMaskBacking: {
+      transform: 'translateX(110%)',
+      transition: `transform ${loadAnimationDuration}ms ease-out 300ms, opacity ${fadeInVideoDuration}ms ease-out`,
+      '&.slideIn': {
+        transform: 'translateX(0)',
+        '&.fadeOut': {
+          opacity: 0,
+        },
+      },
+    },
+
+    // ---------------------------------------------------- //
+    // --------------- END CRUCIAL FOR MASK --------------- //
+    // ---------------------------------------------------- //
+
+    junkFmLogoMaskWrapper: {
+      position: 'relative',
+      overflow: 'hidden',
+      height: 'auto',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      aspectRatio: '16 / 8.3',
+      flexDirection: 'column',
+    },
+
+    video: {
+      width: '99.85%', // spill on right - couldn't avoid
+      transition: `opacity ${fadeInVideoDuration}ms ease-in-out`,
+      opacity: 0,
+      '&.fadeInVideo': {
+        opacity: 1,
+      },
+    },
+    junkFmLogoMaskSvg: {
+      position: 'absolute',
+      top: 0,
+      width: '100%',
+      height: 'auto',
+      overflow: 'hidden',
+    },
+  })
+);

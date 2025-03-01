@@ -3,22 +3,42 @@ import { Box } from '@mantine/core';
 import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
 
+const loadAnimationDelay = 600;
+const loadAnimationDuration = 800; // style set
+const fadeInVideoDelay = 1400;
+const fadeInVideoDuration = 800; // style set
+
 export function JunkFmLogoMask() {
-  const [colorFillFade, setColorFillFade] = useState(false);
-  const { classes, cx } = useJunkFmLogoMaskStyles();
+  const [maskColorMove, setMaskColorMove] = useState(false);
+  const [fadeInVideo, setFadeInVideo] = useState(false);
+  const { classes, cx } = useJunkFmLogoMaskStyles({ loadAnimationDuration, fadeInVideoDuration });
 
-  // on page load, after 1000ms time out, set a state to fade out item with class logoMaskColorFillFade
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setColorFillFade(true);
-    }, 1000);
+    // First Timeout: fire slide in animation
+    const firstTimeout = setTimeout(() => {
+      setMaskColorMove(true);
 
-    return () => clearTimeout(timeout);
+      // Second Timeout: fire video fade animation and remove colors
+      const secondTimeout = setTimeout(() => {
+        setFadeInVideo(true);
+      }, fadeInVideoDelay); 
+
+      return () => clearTimeout(secondTimeout);
+    }, loadAnimationDelay);
+
+    return () => clearTimeout(firstTimeout);
   }, []);
 
   return (
     <Box className={classes.junkFmLogoMaskWrapper}>
-      <video className={classes.video} autoPlay loop muted playsInline src={sampleVideo} />
+      <video
+        className={cx(classes.video, fadeInVideo && 'fadeInVideo')}
+        autoPlay
+        loop
+        muted
+        playsInline
+        src={sampleVideo}
+      />
 
       <svg
         className={classes.junkFmLogoMaskSvg}
@@ -30,14 +50,28 @@ export function JunkFmLogoMask() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
-          // important - this fades on load
-          className={cx(
-            classes.logoMaskColorFillFade,
-            colorFillFade && 'fadeColorFill'
-          )}
-          width="100%"
-          height="100%"
-          fill={colors.white}
+          className={cx(classes.junkLogoMaskBacking, classes.lettersMaskBacking, maskColorMove && 'slideIn', fadeInVideo && 'fadeOut')}
+          id="junk-white"
+          y="321"
+          width="101%"
+          height="54%"
+          fill={colors.red}
+        />
+        <rect
+          className={cx(classes.junkLogoMaskBacking, classes.bottomLineMaskBacking, maskColorMove && 'slideIn', fadeInVideo && 'fadeOut')}
+          id="bottom-line-white"
+          y="1123"
+          width="101%"
+          height="10%"
+          fill={colors.mustard}
+        />
+        <rect
+          className={cx(classes.junkLogoMaskBacking, classes.topLineMaskBacking, maskColorMove && 'slideIn', fadeInVideo && 'fadeOut')}
+          id="top-line-white"
+          y="142"
+          width="101%"
+          height="10%"
+          fill={colors.mustard}
         />
         <defs>
           <mask id="junkfm-mask">
