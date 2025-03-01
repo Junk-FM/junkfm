@@ -14,10 +14,11 @@ export function Home() {
         <CommonButton
           buttonText="BOOK US"
           buttonSize="lg"
-          buttonColor={colors.yellow}
-          buttonHoverColor={colors.mustard}
+          buttonColor={colors.lightBlue}
+          buttonHoverColor={colors.darkBlue}
           buttonTextColor={colors.black}
-          buttonTextHoverColor={colors.trueBlack} 
+          buttonTextHoverColor={colors.white} 
+          outline
         />
       </Box>
     </Box>

@@ -8,6 +8,7 @@ export interface CommonButtonProps {
   buttonTextHoverColor?: string;
   buttonText?: string;
   buttonSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  outline?: boolean;
 }
 
 export function CommonButton(props: CommonButtonProps) {
@@ -18,6 +19,7 @@ export function CommonButton(props: CommonButtonProps) {
     buttonTextHoverColor,
     buttonText = 'Button Text',
     buttonSize = 'md',
+    outline = false,
   } = props;
   const { classes } = useCommonButtonStyles({
     buttonColor,
@@ -25,6 +27,7 @@ export function CommonButton(props: CommonButtonProps) {
     buttonTextColor,
     buttonTextHoverColor,
     buttonSize,
+    outline,
   });
   return (
     <Box role="button" className={classes.commonButton}>

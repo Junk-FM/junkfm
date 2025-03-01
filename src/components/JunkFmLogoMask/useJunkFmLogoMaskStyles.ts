@@ -68,7 +68,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      aspectRatio: '16 / 8.3',
+      aspectRatio: '16 / 7.6',
       flexDirection: 'column',
     },
 
