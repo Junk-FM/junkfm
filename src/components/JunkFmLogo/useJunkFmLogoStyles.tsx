@@ -3,11 +3,10 @@ import { colors } from '@junkfm';
 
 export const useJunkFmLogoStyles = createStyles(() => ({
     junkFmLogo: {
-        display: 'inline-block',
-        width: 'fit-content',
-        fontSize: 'clamp(4rem, 8vw, 5rem)',
+        fontSize: 'clamp(10rem, 29vw, 10rem)',
         h1: {
           lineHeight: '1em',
+          fontSize: 'inherit',
           color: colors.white,
           display: 'inline-block',
           '&:before, &:after': {

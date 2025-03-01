@@ -97,11 +97,8 @@ export const useGlobalStyles = createStyles(() => ({
     width: '100dvw',
     fontFamily: '"Poppins", sans-serif',
     overflow: 'hidden',
-    display: 'flex',
     position: 'relative',
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     h1: {
       fontFamily: '"Oswald", sans-serif',
       fontSize: 'clamp(4rem, 8vw, 5rem)',
@@ -167,8 +164,10 @@ export const useGlobalStyles = createStyles(() => ({
   // --------------------------------------------- //
   // --------------------------------------------- //
 
-  evenRow: {
-    paddingInline: 'max(5vw, (100vw - 1280px)/2)',
+  responsiveRow: {
+    paddingInline: 'max(6vw, (100vw - 1280px)/2)',
+    marginInline: 0,
+    width: '100%',
   },
 
   container: {
