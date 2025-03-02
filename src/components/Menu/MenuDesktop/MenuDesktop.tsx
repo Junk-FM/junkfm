@@ -21,7 +21,7 @@ export function MenuDesktop() {
         buttonTextColor={colors.black}
         buttonTextHoverColor={colors.trueBlack}
         buttonText="Book Us"
-        buttonSize={buttonSizeBreak ? 'xs' : 'sm'}
+        buttonSize={buttonSizeBreak ? 'sm' : 'md'}
         buttonVariant="filled"
       />
     </Box>
