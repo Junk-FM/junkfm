@@ -3,9 +3,9 @@ import { Box } from '@mantine/core';
 import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
 
-const loadAnimationDelay = 600;
+const loadAnimationDelay = 400;
 const loadAnimationDuration = 800; // style set
-const fadeInVideoDelay = 1400;
+const fadeInVideoDelay = 1500;
 const fadeInVideoDuration = 800; // style set
 
 export function JunkFmLogoMask() {
