@@ -1,11 +1,5 @@
 import { Box, Title, Text } from '@mantine/core';
-import {
-  useHeroStyles,
-  JunkFmLogoMask,
-  PageHelmet,
-  useGlobalStyles,
-  JunkFmLogo,
-} from '@junkfm';
+import { useHeroStyles, JunkFmLogoMask, PageHelmet, useGlobalStyles, JunkFmLogo } from '@junkfm';
 
 export function Hero() {
   const { classes, cx } = useHeroStyles();
@@ -16,8 +10,9 @@ export function Hero() {
       <PageHelmet title="Hero" />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
-        <Title order={4}>Destroying your favorite songs since 2010</Title>
-      
+      <Title order={4} italic>
+        Destroying your favorite songs since 2010
+      </Title>
         <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptatem itaque.
           Adipisci modi sapiente velit accusamus necessitatibus reprehenderit cupiditate reiciendis

@@ -1,11 +1,11 @@
 import { createStyles } from '@mantine/core';
-// import { colors } from '@junkfm';
 
-export const useMenuMobileStyles = createStyles(() => ({    
-    menuMobile: {
-        
-        
-        
-        
-    }
-}))
+export const useMenuMobileStyles = createStyles(() => ({
+  menuMobile: {
+    // just the hamburger for now
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+}));

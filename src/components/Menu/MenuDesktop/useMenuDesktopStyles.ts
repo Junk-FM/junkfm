@@ -9,11 +9,25 @@ export const useMenuDesktopStyles = createStyles(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     a: {
+      textDecoration: 'none',
       color: colors.trueBlack,
       textTransform: 'uppercase',
-      letterSpacing: '0.15em',
+      letterSpacing: '0.13em',
       fontWeight: 600,
-        fontSize: 'clamp(13px, 1.25vw, 15px)',
+      fontSize: 'clamp(13px, 1.25vw, 15px)',
+      '&:after': {
+        content: '""',
+        display: 'block',
+        width: '0',
+        height: '0.2em',
+        backgroundColor: colors.red,
+        transition: 'width 200ms ease-in-out',
+      },
+      '&:hover': {
+        '&:after': {
+          width: '100%',
+        },
+      },
     },
   },
 
@@ -23,6 +37,5 @@ export const useMenuDesktopStyles = createStyles(() => ({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-
   },
 }));

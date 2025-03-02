@@ -7,7 +7,7 @@ import chroma from 'chroma-js';
 export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
   menu: {
     width: '100dvw',
-    height: isMobile ? '60px' : '75px',
+    height: isMobile ? '65px' : '75px',
     display: 'flex',
     backgroundColor: sectionBackgrounds.hero,
     justifyContent: 'center',
@@ -16,11 +16,11 @@ export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
     top: 0,
     left: 0,
     zIndex: 100,
-    transition: 'box-shadow 300ms, background-color 300ms, backdrop-filter 300ms',
+    transition: 'box-shadow 400ms, background-color 400ms, backdrop-filter 400ms',
     '&.scrolled': {
-      backgroundColor: chroma(sectionBackgrounds.hero).alpha(0.87).css(),
-      backdropFilter: 'blur(4px)',
-      boxShadow: '0px 4px 6px #00000070'
+      backgroundColor: chroma(sectionBackgrounds.hero).alpha(0.80).css(),
+      backdropFilter: 'blur(5px) brightness(0.8)',
+      boxShadow: `0 5px 5px ${chroma(sectionBackgrounds.hero).alpha(0.4).darken(3).css()}`,
     },
   },
 

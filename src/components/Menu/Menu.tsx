@@ -9,7 +9,7 @@ export function Menu() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 70); // fade in menu border after this Y offset
+      setScrolled(window.scrollY > 50); // fade in menu border after this Y offset
     };
 
 
@@ -17,16 +17,12 @@ export function Menu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (scrolled) {
-    console.log('scrolled');
-  }
-
   const { classes, cx } = useMenuStyles({ isMobile });
 
   return (
-    <Box className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
+    <Box component="nav" className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
       <Box className={cx(classes.menuInner)} id="menu-inner">
-        <JunkFmLogo height="clamp(35px, 85%, 50px)" textColor={colors.trueBlack} />
+        <JunkFmLogo height="80%" textColor={colors.trueBlack} />
         <Box className={classes.menuSwitchBox}>{isMobile ? <MenuMobile /> : <MenuDesktop />}</Box>
       </Box>
     </Box>
