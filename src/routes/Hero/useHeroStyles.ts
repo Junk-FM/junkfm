@@ -5,7 +5,7 @@ import { colors, mq, sectionBackgrounds } from '@junkfm';
 
 export const useHeroStyles = createStyles(() => ({
   heroWrapper: {
-    paddingInline: 'max(2vw, (100vw - 1700px)/2)', // variant of row padding
+    paddingInline: 'max(2vw, (100vw - 1600px)/2)', // variant of row padding
     position: 'relative',
     background: sectionBackgrounds.hero,
     paddingTop: '20px',

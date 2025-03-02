@@ -33,7 +33,7 @@ export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     [mq.customMax(1200)]: {
-      paddingInline: 'max(2vw, (100vw - 1700px)/2)', // variant of row padding
+      paddingInline: 'max(2vw, (100vw - 1600px)/2)',
 
     },
   },
