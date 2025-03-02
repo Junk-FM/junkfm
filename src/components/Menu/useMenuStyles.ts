@@ -1,7 +1,7 @@
 
 
 import { createStyles } from '@mantine/core';
-import { MenuProps, sectionBackgrounds } from '@junkfm';
+import { MenuProps, sectionBackgrounds, mq } from '@junkfm';
 import chroma from 'chroma-js';
 
 export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
@@ -25,17 +25,21 @@ export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
   },
 
   menuInner: {
-    paddingInline: 'max(3vw, (100vw - 1600px)/2)', // variant of row padding
+    paddingInline: 'max(3vw, (100vw - 1560px)/2)', // variant of row padding
     width: '100%',
     height: '85%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [mq.customMax(1200)]: {
+      paddingInline: 'max(2vw, (100vw - 1700px)/2)', // variant of row padding
+
+    },
   },
 
   menuSwitchBox: {
-    width: '80%',
+    width: '67%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',

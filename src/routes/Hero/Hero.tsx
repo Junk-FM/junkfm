@@ -2,18 +2,14 @@ import { Box, Title, Text } from '@mantine/core';
 import {
   useHeroStyles,
   JunkFmLogoMask,
-  CommonButton,
   PageHelmet,
-  colors,
   useGlobalStyles,
   JunkFmLogo,
 } from '@junkfm';
 
-
 export function Hero() {
   const { classes, cx } = useHeroStyles();
   const { classes: globalClasses } = useGlobalStyles();
-
 
   return (
     <Box className={cx(classes.heroWrapper)} id="hero">
@@ -21,13 +17,7 @@ export function Hero() {
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
         <Title order={4}>Destroying your favorite songs since 2010</Title>
-        <CommonButton
-          buttonText="BOOK US"
-          buttonSize="md"
-          buttonColor={colors.lightBlue}
-          buttonTextColor={colors.black}
-          buttonTextHoverColor={colors.white}
-        />
+      
         <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptatem itaque.
           Adipisci modi sapiente velit accusamus necessitatibus reprehenderit cupiditate reiciendis
@@ -68,7 +58,25 @@ export function Hero() {
           quidem placeat corrupti. Iste expedita explicabo voluptate! Repellendus, praesentium nemo.
           <br />
           <br />
-          <JunkFmLogo width="100%" />
+        </Text>
+        <JunkFmLogo width="100%" />
+        <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti impedit dolorem sunt
+          voluptas, dignissimos eius culpa nihil, explicabo molestiae a accusantium, eos rerum quas
+          laborum nemo commodi doloremque minima obcaecati sint dolorum? Sunt mollitia error modi ab
+          exercitationem, nulla a. Illum, rem! Possimus, tempora! Excepturi in modi saepe quod
+          distinctio non perspiciatis quam deleniti accusamus, quibusdam, assumenda tempora, itaque
+          quo. Deserunt eaque modi quae rem similique non accusantium, debitis vitae, fugiat
+          provident voluptatibus accusamus eos facere! Voluptatibus, necessitatibus. At quasi id
+          reiciendis! Magnam dolorem excepturi vel quaerat ducimus possimus fugit aliquid facilis,
+          officiis nemo reprehenderit numquam. Numquam molestias rerum officiis, accusantium quod
+          asperiores aperiam voluptas iusto nihil odit itaque voluptates et repudiandae temporibus
+          reprehenderit suscipit, laudantium dolorem sequi error vitae dolores. Et eum at
+          consequuntur animi impedit asperiores, quia id quod minima facere laudantium doloremque
+          dolor fuga? Voluptatibus tenetur voluptatem, ipsum beatae esse vitae quo! Perspiciatis
+          quidem placeat corrupti. Iste expedita explicabo voluptate! Repellendus, praesentium nemo.
+          <br />
+          <br />
         </Text>
       </Box>
     </Box>

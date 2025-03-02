@@ -3,7 +3,7 @@ import { colors } from '@junkfm';
 
 export const useMenuDesktopStyles = createStyles(() => ({
   menuDesktop: {
-    width: 'clamp(580px, 78%, 840px)',
+    width: 'clamp(620px, 95%, 770px)',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

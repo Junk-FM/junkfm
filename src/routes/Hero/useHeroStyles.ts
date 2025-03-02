@@ -15,19 +15,22 @@ export const useHeroStyles = createStyles(() => ({
   heroContentWrapper: {
     textAlign: 'center',
     h4: {
-      color: colors.yellow,
+      color: colors.red,
       fontWeight: 500,
-      marginBlock: '0 0.75em',
+      marginBlock: '0.75em',
+      textWrap: 'balance',
+      lineHeight: '1.3em',
     },
 
     // placeholder p
     p: {
-      marginTop: '2em',
+      marginTop: '1em',
       maxWidth: '1200px',
       textAlign: 'left',
+      fontWeight: 500,
       marginInline: 'auto',
-      color: colors.white,
-      fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
+      color: colors.trueBlack,
+      fontSize: 'clamp(1rem, 2vw, 1.15rem)',
     },
   },
 

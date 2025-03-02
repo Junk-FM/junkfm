@@ -8,7 +8,7 @@ export function MenuMobile() {
 
   return (
     <Box className={classes.menuMobile}>
-      <IconMenu2 size={36} strokeWidth={2} color={colors.white} />
+      <IconMenu2 size={36} strokeWidth={2} color={colors.trueBlack} />
     </Box>
   );
 }
