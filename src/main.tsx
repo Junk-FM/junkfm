@@ -4,13 +4,16 @@ import { MantineProvider } from '@mantine/core';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App.tsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-      <Router>
-        <App />
-      </Router>
-    </MantineProvider>
-  </StrictMode>
+  <HelmetProvider>
+    <StrictMode>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Router>
+          <App />
+        </Router>
+      </MantineProvider>
+    </StrictMode>
+  </HelmetProvider>
 );

@@ -1,1 +1,2 @@
-export * from './useGlobalStyles'
+export * from './useGlobalStyles';
+export * from './PageHelmet';

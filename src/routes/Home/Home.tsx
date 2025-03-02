@@ -1,5 +1,5 @@
 import { Box, Title } from '@mantine/core';
-import { useHomeStyles, JunkFmLogoMask, CommonButton, colors } from '@junkfm';
+import { useHomeStyles, JunkFmLogoMask, CommonButton, PageHelmet, colors } from '@junkfm';
 
 export function Home() {
   const { classes, cx } = useHomeStyles();
@@ -7,6 +7,7 @@ export function Home() {
 
   return (
     <Box className={cx(classes.homeWrapper)} id="home">
+      <PageHelmet title="Home" />
       <JunkFmLogoMask />
       <Box className={classes.homeContentWrapper}>
         <Title order={4}>Destroying your favorite songs since 2010</Title>
