@@ -3,23 +3,17 @@ import { colors } from '@junkfm';
 
 export const useMenuDesktopStyles = createStyles(() => ({
   menuDesktop: {
-    width: '100dvw',
-    backgroundColor: colors.trueBlack,
-    // boxShadow: '0 4px 4px #00000090',
-    height: 'clamp(50px, calc(2.5dvw + 3dvh), 80px)',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    zIndex: 100,
+    width: 'clamp(580px, 78%, 840px)',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
     a: {
       color: colors.white,
       textTransform: 'uppercase',
       letterSpacing: '0.15em',
       fontWeight: 500,
+        fontSize: 'clamp(13px, 1.25vw, 15px)',
     },
   },
 

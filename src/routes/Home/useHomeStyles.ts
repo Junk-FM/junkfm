@@ -9,6 +9,8 @@ export const useHomeStyles = createStyles(() => ({
     position: 'relative',
   },
 
+  
+
   homeContentWrapper: {
     textAlign: 'center',
     h4: {
@@ -16,5 +18,17 @@ export const useHomeStyles = createStyles(() => ({
       fontWeight: 500,
       marginBlock: '0 0.75em',
     },
+
+    // placeholder p
+    p: {
+      marginTop: '2em',
+      maxWidth: '1200px',
+      textAlign: 'left',
+      marginInline: 'auto',
+      color: colors.white,
+      fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
+    }
   },
+
+
 }));

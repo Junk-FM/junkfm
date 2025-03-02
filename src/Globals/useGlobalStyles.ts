@@ -1,6 +1,6 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
 
-const BREAKPOINT_TOUCH = 800;
+const BREAKPOINT_TOUCH = 820;
 
 export const mq = {
   customMax: (max: number) => `@media (max-width: ${max}px)`,
@@ -19,6 +19,7 @@ export const colors = {
   yellow: '#FFFD98', // Mindaro
   mustard: '#ECD444', // Citrine
   red: '#C42021', // Fire engine red
+  darkRed: '#800E13', // Dark Red 
 };
 
 export const globalTheme: MantineThemeOverride = {
@@ -49,7 +50,7 @@ export const globalTheme: MantineThemeOverride = {
 
   breakpoints: {
     xs: '575',
-    sm: '768',
+    sm: '820', // unusual but trying
     md: '991',
     lg: '1200',
     xl: '1400',

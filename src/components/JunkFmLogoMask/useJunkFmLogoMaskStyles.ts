@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core';
-import { heroSectionBackgroundColor } from '@junkfm';
+import { heroSectionBackgroundColor, mq } from '@junkfm';
 
 interface JunkFmLogoMaskStyles {
   loadAnimationDuration: number;
@@ -70,6 +70,16 @@ export const useJunkFmLogoMaskStyles = createStyles(
       alignItems: 'center',
       aspectRatio: '16 / 7.6',
       flexDirection: 'column',
+      [mq.customMax(1350)]: {
+        
+        marginTop: 'calc(99px + -7.9vw)',  
+      },
+      [mq.customMax(800)]: {
+        marginTop: 'calc(76px + -7.7vw)',  
+      },
+      [mq.customMax(575)]: {
+        marginTop: 'calc(53px + -4.9vw)',
+      }
     },
 
     video: {
@@ -82,10 +92,11 @@ export const useJunkFmLogoMaskStyles = createStyles(
     },
     junkFmLogoMaskSvg: {
       position: 'absolute',
-      top: 0,
+      top: '0',
       width: '100%',
       height: 'auto',
       overflow: 'hidden',
+
     },
   })
 );

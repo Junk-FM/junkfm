@@ -4,9 +4,9 @@ import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
 
 const loadAnimationDelay = 400;
-const loadAnimationDuration = 800; // style set
+const loadAnimationDuration = 800; // passed to stylesheet
 const fadeInVideoDelay = 1500;
-const fadeInVideoDuration = 800; // style set
+const fadeInVideoDuration = 800; // passed to stylesheet
 
 export function JunkFmLogoMask() {
   const [maskColorMove, setMaskColorMove] = useState(false);
@@ -43,8 +43,8 @@ export function JunkFmLogoMask() {
       <svg
         className={classes.junkFmLogoMaskSvg}
         id="junk-fm-logo-mask"
-        width="2743"
-        height="1434"
+        width="100%"
+        height="100%"
         viewBox="0 0 2743 1434"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
