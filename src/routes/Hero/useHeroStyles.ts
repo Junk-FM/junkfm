@@ -1,17 +1,18 @@
 import { createStyles } from '@mantine/core';
-import { colors } from '@junkfm';
+import { colors, sectionBackgrounds } from '@junkfm';
 
-export const heroSectionBackgroundColor = colors.black;
 
-export const useHomeStyles = createStyles(() => ({
-  homeWrapper: {
+
+export const useHeroStyles = createStyles(() => ({
+  heroWrapper: {
     paddingInline: 'max(2vw, (100vw - 1700px)/2)', // variant of row padding
     position: 'relative',
+    background: sectionBackgrounds.hero,
   },
 
   
 
-  homeContentWrapper: {
+  heroContentWrapper: {
     textAlign: 'center',
     h4: {
       color: colors.yellow,
@@ -27,7 +28,7 @@ export const useHomeStyles = createStyles(() => ({
       marginInline: 'auto',
       color: colors.white,
       fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
-    }
+    },
   },
 
 

@@ -2,6 +2,7 @@ import { createStyles, MantineThemeOverride } from '@mantine/core';
 
 const BREAKPOINT_TOUCH = 820;
 
+// homemade media query function for createStyles
 export const mq = {
   customMax: (max: number) => `@media (max-width: ${max}px)`,
   customMin: (min: number) => `@media (min-width: ${min}px)`,
@@ -19,8 +20,24 @@ export const colors = {
   yellow: '#FFFD98', // Mindaro
   mustard: '#ECD444', // Citrine
   red: '#C42021', // Fire engine red
-  darkRed: '#800E13', // Dark Red 
+  darkRed: '#800E13', // Dark Red
 };
+
+// ------------------------------------------ //
+// ------ BACKGROUND COLORS BY SECTION ------ //
+// ------------------------------------------ //
+
+export const sectionBackgrounds = {
+  hero: colors.gray,
+  home: colors.black,
+  about: colors.darkBlue,
+  songs: colors.lightBlue,
+  shows: colors.gray,
+  booking: colors.yellow,
+  media: colors.red,
+};
+
+// ------------------------------------------ //
 
 export const globalTheme: MantineThemeOverride = {
   globalStyles() {

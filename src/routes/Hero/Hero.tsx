@@ -1,6 +1,6 @@
 import { Box, Title, Text } from '@mantine/core';
 import {
-  useHomeStyles,
+  useHeroStyles,
   JunkFmLogoMask,
   CommonButton,
   PageHelmet,
@@ -9,16 +9,17 @@ import {
   JunkFmLogo,
 } from '@junkfm';
 
-export function Home() {
-  const { classes, cx } = useHomeStyles();
+
+export function Hero() {
+  const { classes, cx } = useHeroStyles();
   const { classes: globalClasses } = useGlobalStyles();
 
 
   return (
-    <Box className={cx(classes.homeWrapper)} id="home">
-      <PageHelmet title="Home" />
+    <Box className={cx(classes.heroWrapper)} id="hero">
+      <PageHelmet title="Hero" />
       <JunkFmLogoMask />
-      <Box className={classes.homeContentWrapper}>
+      <Box className={classes.heroContentWrapper}>
         <Title order={4}>Destroying your favorite songs since 2010</Title>
         <CommonButton
           buttonText="BOOK US"

@@ -1,18 +1,27 @@
+
+
 import { createStyles } from '@mantine/core';
-import { MenuProps } from '@junkfm';
+import { MenuProps, sectionBackgrounds } from '@junkfm';
+import chroma from 'chroma-js';
 
 export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
   menu: {
     width: '100dvw',
     height: isMobile ? '60px' : '75px',
     display: 'flex',
-    // backgroundColor: colors.black,
+    backgroundColor: sectionBackgrounds.hero,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'fixed',
     top: 0,
     left: 0,
     zIndex: 100,
+    transition: 'box-shadow 300ms, background-color 300ms, backdrop-filter 300ms',
+    '&.scrolled': {
+      backgroundColor: chroma(sectionBackgrounds.hero).alpha(0.87).css(),
+      backdropFilter: 'blur(4px)',
+      boxShadow: '0px 4px 6px #00000070'
+    },
   },
 
   menuInner: {

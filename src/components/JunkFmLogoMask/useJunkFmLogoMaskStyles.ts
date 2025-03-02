@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core';
-import { heroSectionBackgroundColor, mq } from '@junkfm';
+import { mq, sectionBackgrounds } from '@junkfm';
 
 interface JunkFmLogoMaskStyles {
   loadAnimationDuration: number;
@@ -15,7 +15,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
     // ---------------------------------------------------- //
 
     crucialMaskFill: {
-      fill: heroSectionBackgroundColor,
+      fill: sectionBackgrounds.hero,
     },
 
     junkLogoMaskBacking: {

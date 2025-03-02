@@ -16,10 +16,9 @@ export function MenuDesktop() {
       <Text component="a">Booking</Text>
       <Text component="a">Media</Text>
       <CommonButton
-        buttonColor={colors.yellow}
-        buttonHoverColor={colors.mustard}
-        buttonTextColor={colors.black}
-        buttonTextHoverColor={colors.trueBlack}
+        buttonColor={colors.red}
+        buttonTextColor={colors.white}
+        buttonTextHoverColor={colors.white}
         buttonText="Book Us"
         buttonSize={buttonSizeBreak ? 'sm' : 'md'}
         buttonVariant="filled"
