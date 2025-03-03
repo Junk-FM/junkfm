@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { MenuDesktop, MenuMobile, useMenuStyles, menuItems } from '.';
-import { JunkFmLogo, useIsMobile, colors } from '@junkfm';
+import { JunkFmHeaderLogo, useIsMobile, colors } from '@junkfm';
 import { useLocation } from 'react-router-dom';
 
 export function Menu() {
@@ -19,14 +20,19 @@ export function Menu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const { classes, cx } = useMenuStyles({ isMobile });
+
+  console.log('active route is:', activeRoute);
+
+  const { classes, cx } = useMenuStyles({ isMobile, activeRoute });
 
   return (
     <Box component="nav" className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
       <Box className={cx(classes.menuInner)} id="menu-inner">
-        <JunkFmLogo height="75%" textColor={colors.white} />
+        <Link to="/" className={classes.logoLink}>
+          <JunkFmHeaderLogo height="75%" textColor={colors.white} />
+        </Link>
         {isMobile ? (
-          <MenuMobile /> // REVISIT 
+          <MenuMobile /> // REVISIT
         ) : (
           <MenuDesktop activeRoute={activeRoute} menuItems={menuItems} />
         )}

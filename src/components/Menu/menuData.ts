@@ -7,12 +7,11 @@ export type MenuItem = {
 };
 
 export const menuItems: MenuItem[] = [
-  { title: 'Home', link: '/', neonColor: colors.neonLightBlue },
-  { title: 'About', link: '/about', neonColor: colors.neonYellow },
-  { title: 'Playlist', link: '/playlist', neonColor: colors.neonOrange },
-  { title: 'Shows', link: '/shows', neonColor: colors.neonGreen },
-  { title: 'Contact', link: '/contact', neonColor: colors.neonBlue },
-  { title: 'Media', link: '/media', neonColor: colors.neonPink },
+  { title: 'About', link: '/about', neonColor: colors.neonLightBlue },
+  { title: 'Playlist', link: '/playlist', neonColor: colors.neonPink },
+  { title: 'Shows', link: '/shows', neonColor: colors.neonOrange },
+  { title: 'Contact', link: '/contact', neonColor: colors.neonBlue }, // revisit neonGreen instead??
+  { title: 'Media', link: '/media', neonColor: colors.neonYellow },
 ];
 
 

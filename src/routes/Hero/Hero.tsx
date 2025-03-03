@@ -10,7 +10,7 @@ export function Hero() {
       <PageHelmet title="Hero" />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
-      <Title order={4} italic>
+      <Title order={3}>
         Destroying your favorite songs since 2010
       </Title>
         <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
@@ -54,8 +54,8 @@ export function Hero() {
           <br />
           <br />
         </Text>
-        <JunkFmLogo width="100%" />
-        <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
+        <JunkFmLogo width="clamp(200px, 80%, 900px)" />
+        <Text component="p" className={globalClasses.balance} pt="1.5em" px="min(3vw, 2rem)">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti impedit dolorem sunt
           voluptas, dignissimos eius culpa nihil, explicabo molestiae a accusantium, eos rerum quas
           laborum nemo commodi doloremque minima obcaecati sint dolorum? Sunt mollitia error modi ab

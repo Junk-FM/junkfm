@@ -1,5 +1,4 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
-import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 820;
 
@@ -31,7 +30,6 @@ export const colors = {
   neonGreen: '#6CFF5C', // Screamin' Green
   neonPink: '#FF01FB', // Fuchsia
   neonBlue: '#0044FF', // Palatinate Blue
-  // neonRed: '#FF1100', // Candy apple red // deletelater??
 };
 
 // ------------------------------------------ //
@@ -39,7 +37,8 @@ export const colors = {
 // ------------------------------------------ //
 
 export const sectionBackgrounds = {
-  hero: chroma(colors.black).brighten(0.3).hex(),
+  menu: colors.black,
+  hero: colors.black,
   home: colors.black,
   about: colors.darkBlue,
   songs: colors.lightBlue,
