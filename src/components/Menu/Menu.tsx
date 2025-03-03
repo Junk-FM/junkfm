@@ -32,7 +32,7 @@ export function Menu() {
           <JunkFmHeaderLogo height="75%" textColor={colors.white} />
         </Link>
         {isMobile ? (
-          <MenuMobile /> // REVISIT
+          <MenuMobile activeRoute={activeRoute} menuItems={menuItems}  /> // REVISIT
         ) : (
           <MenuDesktop activeRoute={activeRoute} menuItems={menuItems} />
         )}

@@ -1,14 +1,66 @@
-import { Box } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { Box, Drawer, Text } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons-react';
-import { useMenuMobileStyles } from '.';
-import { colors } from '@junkfm';
+import { Link } from 'react-router-dom';
+import { colors, JunkFmLogo, CommonButton, useMenuMobileStyles, MenuProps } from '@junkfm';
 
-export function MenuMobile() {
-  const { classes } = useMenuMobileStyles();
+export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
+  const [opened, { open, close }] = useDisclosure(false);
+  const { classes, cx } = useMenuMobileStyles();
+
+  const handleHamburgerClick = () => {
+    open();
+    console.log('active route now:', activeRoute);
+  };
 
   return (
     <Box className={classes.menuMobile}>
-      <IconMenu2 size={36} strokeWidth={2} color={colors.trueBlack} />
+      <Box onClick={handleHamburgerClick} component="button" className={classes.hamburger}>
+        <IconMenu2 size={36} strokeWidth={2} color={colors.white} />
+      </Box>
+
+      <Drawer
+        
+        opened={opened}
+        onClose={close}
+        overlayProps={{ opacity: 0.5, blur: 4 }}
+        position="right"
+        size="clamp(300px, 83dvw, 380px)"
+        withCloseButton={false}
+        transitionProps={{ transition: 'rotate-left', duration: 170, timingFunction: 'ease-out' }}
+      >
+        <Box className={classes.mobileMenuContainerOuter} p="1em">
+          <Box className={classes.mobileMenuRoutesContainer}>
+            <Link to="/" onClick={close} className={classes.mobileMenuLogoLink}>
+              <JunkFmLogo width="87%" textColor={colors.black} barColor={colors.red} />
+            </Link>
+
+            <Box className={classes.mobileMenuTextRoutesContainer}>
+              {menuItems.map((item) => (
+                <Link
+                  key={item.link}
+                  to={item.link}
+                  onClick={close}
+                  className={cx(classes.mobileMenuItem)}
+                  // revisit // todo ACTIVE ROUTE STUFF
+                >
+                  <Text title={item.title} component="span">
+                    {item.title}
+                  </Text>
+                </Link>
+              ))}
+            </Box>
+          </Box>
+          <CommonButton
+            buttonColor={colors.red}
+            buttonTextColor={colors.white}
+            buttonTextHoverColor={colors.white}
+            buttonText="BOOK US"
+            buttonSize="xl"
+            buttonVariant="filled"
+          />
+        </Box>
+      </Drawer>
     </Box>
   );
 }
