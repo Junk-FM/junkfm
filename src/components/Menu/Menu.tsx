@@ -24,9 +24,9 @@ export function Menu() {
   return (
     <Box component="nav" className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
       <Box className={cx(classes.menuInner)} id="menu-inner">
-        <JunkFmLogo height="75%" textColor={colors.trueBlack} />
+        <JunkFmLogo height="75%" textColor={colors.white} />
         {isMobile ? (
-          <MenuMobile />
+          <MenuMobile /> // REVISIT 
         ) : (
           <MenuDesktop activeRoute={activeRoute} menuItems={menuItems} />
         )}

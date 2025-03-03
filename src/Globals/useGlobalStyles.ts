@@ -1,4 +1,5 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
+import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 820;
 
@@ -10,10 +11,11 @@ export const mq = {
   desktop: `@media (min-width: ${BREAKPOINT_TOUCH + 1}px)`,
 };
 
+// color names via Coolers //
 export const colors = {
   trueBlack: '#000000', // True black
   black: '#12130F', // Night
-  darkBlue: '#054A91', // Polynesian blue
+  darkBlue: '#2A63FF', // Neon blue
   lightBlue: '#81A4CD', // Vista Blue
   gray: '#DBE4EE', // Alice Blue
   white: '#FFFFFF', // White
@@ -21,6 +23,15 @@ export const colors = {
   mustard: '#ECD444', // Citrine
   red: '#C42021', // Fire engine red
   darkRed: '#800E13', // Dark Red
+
+  // --- NEON SIGN COLORS --- //
+  neonLightBlue: '#3BF4FB', // Aqua
+  neonYellow: '#FFFC33', // Yellow
+  neonOrange: '#FF5100', // Aerospace orange
+  neonGreen: '#6CFF5C', // Screamin' Green
+  neonPink: '#FF01FB', // Fuchsia
+  neonBlue: '#0044FF', // Palatinate Blue
+  // neonRed: '#FF1100', // Candy apple red // deletelater??
 };
 
 // ------------------------------------------ //
@@ -28,7 +39,7 @@ export const colors = {
 // ------------------------------------------ //
 
 export const sectionBackgrounds = {
-  hero: colors.gray,
+  hero: chroma(colors.black).brighten(0.3).hex(),
   home: colors.black,
   about: colors.darkBlue,
   songs: colors.lightBlue,

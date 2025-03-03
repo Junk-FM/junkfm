@@ -17,4 +17,4 @@ import { useMediaQuery } from '@mantine/hooks';
  * console.log(isMobile); // true or false
  * ```
  */
-export const useIsMobile = () => useMediaQuery('(max-width: 820px)');
+export const useIsMobile = () => useMediaQuery('(max-width: 900px)');
