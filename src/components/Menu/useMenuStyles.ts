@@ -7,7 +7,7 @@ export interface MenuStylesProps {
   activeRoute: string;
 }
 
-const transitionSpeed = (activeRoute: string) => `${activeRoute === '/' ? 250 : 400}ms ease-in-out`;
+export const lightEase = 'cubic-bezier(0.41, 0.09, 0.44, 0.89)';
 
 export const useMenuStyles = createStyles((_, { isMobile, activeRoute }: MenuStylesProps) => ({
   menu: {
@@ -58,7 +58,7 @@ export const useMenuStyles = createStyles((_, { isMobile, activeRoute }: MenuSty
     justifyContent: 'center',
     alignItems: 'center',
     transformOrigin: 'center',
-    transition: 'transform 300ms ease-in-out',
+    transition: `transform 300ms ${lightEase}`,
     transform: activeRoute === '/' ? 'scale(1)' : 'scale(0.8)',
 
     // -------------- RIDICULOUS HOVER STUFF -------------- //
@@ -71,9 +71,11 @@ export const useMenuStyles = createStyles((_, { isMobile, activeRoute }: MenuSty
       '& svg': {
         '& #letters': {
           transform: 'translateY(-170%)',
+          transition: `transform 170ms ${lightEase} 40ms`,
         },
         '& #home': {
           transform: 'translateY(-120%)',
+          transition: `transform 200ms ${lightEase} 55ms`,
         },
         rect: {
           fill:
@@ -90,31 +92,35 @@ export const useMenuStyles = createStyles((_, { isMobile, activeRoute }: MenuSty
       '& #home': {
         transformOrigin: 'center',
         transformBox: 'fill-box',
-        transition: `transform 300ms ease-out`,
+        transition: `transform 400ms ${lightEase}`,
         transform: 'translateY(20%)',
         '& > g path, & > path': {
           transition: 'fill 300ms ease-in-out, stroke-width 300ms ease-in-out',
-          fill:
-            activeRoute === '/'
-              ? colors.white
-              : chroma(colors.yellow).darken(0).desaturate(1.6).hex(),
+          fill: colors.white,
           stroke:
             activeRoute === '/'
               ? colors.white
               : chroma(colors.yellow).darken(0).desaturate(1.6).hex(),
+          '&#home-shape': {
+            fill: colors.lightBlue,
+          },
         },
       },
       '& #letters': {
         transformOrigin: 'center',
         transformBox: 'fill-box',
-        transition: `transform 300ms ease-out`,
+        transition: `transform 400ms ${lightEase}`,
         '& > g path': {
-          transition: 'fill 300ms ease-in-out, stroke-width 300ms ease-in-out',
+          transition: `fill 300ms ${lightEase}, stroke-width 300ms ${lightEase}`,
           fill:
             activeRoute === '/'
               ? colors.white
               : chroma(colors.yellow).darken(0).desaturate(0.8).hex(),
-          strokeWidth: activeRoute === '/' ? 8 : 0,
+          strokeWidth: activeRoute === '/' ? 5 : 0, // revisit //deletelater
+          stroke:
+            activeRoute === '/'
+              ? colors.white
+              : chroma(colors.yellow).darken(0).desaturate(0.8).hex(),
         },
       },
       rect: {
@@ -125,10 +131,10 @@ export const useMenuStyles = createStyles((_, { isMobile, activeRoute }: MenuSty
         filter: `drop-shadow(0 20px 25px ${colors.black}) drop-shadow(0 -20px 25px ${colors.black})`,
 
         '&#bottom-line': {
-          transition: 'all 250ms ease-out',
+          transition: `all 250ms ${lightEase}`,
         },
         '&#top-line': {
-          transition: 'all 250ms ease-out',
+          transition: `all 250ms ${lightEase}`,
         },
       },
     },
