@@ -11,7 +11,7 @@ export const useCommonButtonStyles = createStyles(
     _,
     {
       buttonColor = colors.lightBlue,
-      buttonHoverColor = chroma(buttonColor).darken(1.6).hex(),
+      buttonHoverColor = chroma(buttonColor).darken(0.7).hex(),
       buttonTextColor = colors.trueBlack,
       buttonTextHoverColor,
       buttonSize = 'xl',
