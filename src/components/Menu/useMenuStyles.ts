@@ -1,10 +1,14 @@
 
 
 import { createStyles } from '@mantine/core';
-import { MenuProps, sectionBackgrounds, mq } from '@junkfm';
+import { sectionBackgrounds, mq } from '@junkfm';
 import chroma from 'chroma-js';
 
-export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
+export interface MenuStylesProps {
+  isMobile: boolean;
+}
+
+export const useMenuStyles = createStyles((_, { isMobile }: MenuStylesProps) => ({
   menu: {
     width: '100dvw',
     height: isMobile ? '65px' : '75px',
@@ -27,7 +31,7 @@ export const useMenuStyles = createStyles((_, { isMobile }: MenuProps) => ({
   menuInner: {
     paddingInline: 'max(3vw, (100vw - 1560px)/2)', // variant of row padding
     width: '100%',
-    height: '85%',
+    height: '92%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',

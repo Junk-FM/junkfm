@@ -152,11 +152,6 @@ export const useGlobalStyles = createStyles(() => ({
       fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
       fontWeight: 400,
     },
-    a: {
-      fontFamily: '"Poppins", sans-serif',
-      fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
-      fontWeight: 400,
-    },
   },
 
   // ---------------------------------------- //

@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mantine/core';
-import { MenuDesktop, MenuMobile, useMenuStyles } from '.';
+import { MenuDesktop, MenuMobile, useMenuStyles, menuItems } from '.';
 import { JunkFmLogo, useIsMobile, colors } from '@junkfm';
+import { useLocation } from 'react-router-dom';
 
 export function Menu() {
   const isMobile = useIsMobile();
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation(); // ✅ Get active route
+  const activeRoute = location.pathname; // ✅ Store active route
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50); // fade in menu border after this Y offset
     };
-
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -22,8 +24,12 @@ export function Menu() {
   return (
     <Box component="nav" className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
       <Box className={cx(classes.menuInner)} id="menu-inner">
-        <JunkFmLogo height="80%" textColor={colors.trueBlack} />
-        <Box className={classes.menuSwitchBox}>{isMobile ? <MenuMobile /> : <MenuDesktop />}</Box>
+        <JunkFmLogo height="75%" textColor={colors.trueBlack} />
+        {isMobile ? (
+          <MenuMobile />
+        ) : (
+          <MenuDesktop activeRoute={activeRoute} menuItems={menuItems} />
+        )}
       </Box>
     </Box>
   );
