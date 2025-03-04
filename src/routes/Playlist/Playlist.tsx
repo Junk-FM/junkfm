@@ -1,4 +1,4 @@
-import { usePlaylistStyles, useGlobalStyles, PageHelmet } from '@junkfm';
+import { usePlaylistStyles, useGlobalStyles, PageHelmet, playlistData } from '@junkfm';
 import { Box, Grid, Text, Title } from '@mantine/core';
 
 export function Playlist() {
@@ -18,36 +18,16 @@ export function Playlist() {
       <Title order={1}>Our Playlist</Title>
       <Text component="h5">...which is frequently updated</Text>
       <Grid className={classes.playlistGridWrapper}>
-        <Grid.Col span={3.5}>
-          <Title order={3} underline>
-            &lt;=80s
-          </Title>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-        </Grid.Col>
-        <Grid.Col span={3.5}>
-          <Title order={3} underline>
-            ==90s
-          </Title>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-        </Grid.Col>
-        <Grid.Col span={3.5}>
-          <Title order={3} underline>
-            00s=&gt;
-          </Title>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-          <Text>SONGS</Text>
-        </Grid.Col>
+        {playlistData.map((section) => (
+          <Grid.Col span={12} xs={4} sm={4} md={3.5} lg={3.25} key={section.decade}>
+            <Title order={4}>{section.decade}</Title>
+            {section.artists.map((artist) => (
+              <Text component="p" key={artist}>
+                {artist}
+              </Text>
+            ))}
+          </Grid.Col>
+        ))}
       </Grid>
     </Box>
   );

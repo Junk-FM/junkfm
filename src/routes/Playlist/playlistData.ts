@@ -26,7 +26,7 @@ export const playlistData = [
       ],
     },
     {
-      decade: "== 1990s",
+      decade: "= 1990s",
       artists: [
         "Backstreet Boys",
         "Blackstreet",

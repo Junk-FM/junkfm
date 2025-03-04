@@ -194,6 +194,9 @@ export const useGlobalStyles = createStyles(() => ({
 
   responsiveRow: {
     paddingInline: 'max(6vw, (100vw - 1400px)/2)', // changed from 1280px ???
+    [mq.mobile]: {
+      paddingInline: '3vw',
+    },
   },
 
   routeTopMenuPadding: {
