@@ -20,12 +20,18 @@ export const useHeroStyles = createStyles(() => ({
   heroContentWrapper: {
     textAlign: 'center',
     h3: {
-      color: colors.yellow,
+      color: colors.mustard,
       fontWeight: 500,
       marginBlock: '0.2em 0.75em',
+      width: '100%',
       textWrap: 'balance',
       lineHeight: '1.3em',
       fontFamily: '"Poppins", sans-serif',
+      // position: 'absolute',
+      // top: '19%',
+      // left: '50%',
+      // transform: 'translate(-50%, -50%)',
+      // mixBlendMode: 'color-dodge',
     },
     
     // placeholder p

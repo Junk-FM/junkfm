@@ -64,7 +64,7 @@ const defaultKeywords = [
   'wedding reception live music',
 ];
 
-const defaultDescription = 'Junk FM - Destroying your favorite songs since 2010';
+const defaultDescription = 'Junk FM - Ruining your favorite songs since 2010';
 
 export function PageHelmet({
   title,

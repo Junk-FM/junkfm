@@ -218,7 +218,7 @@ export const useGlobalStyles = createStyles(() => ({
   },
 
   textContrastShadowHeavy: {
-    textShadow: `1px 1px 5px ${colors.black}30, -1px -1px 5px ${colors.black}30, 1px -1px 5px ${colors.black}30, -1px 1px 5px ${colors.black}30`,
+    textShadow: `3px 1px 5px ${colors.black}60, -3px -1px 5px ${colors.black}60, 3px -1px 5px ${colors.black}60, -3px 1px 5px ${colors.black}60`,
   },
 
   // ----------------------------------------- //

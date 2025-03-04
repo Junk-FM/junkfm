@@ -10,33 +10,8 @@ export function Hero() {
       <PageHelmet title="Hero" />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
-      <Title order={3}>
-        Destroying your favorite songs since 2010
-      </Title>
-        <Text component="p" className={globalClasses.balance} px="min(3vw, 2rem)">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptatem itaque.
-          Adipisci modi sapiente velit accusamus necessitatibus reprehenderit cupiditate reiciendis
-          voluptates quo iure aperiam accusantium beatae hic obcaecati iste voluptas quibusdam
-          placeat excepturi corrupti quod tempore, inventore laudantium quia? Saepe repellat atque
-          ea? Tempore quas repudiandae aut fugit omnis minus! <br />
-          <br />
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At amet architecto nihil,
-          adipisci autem asperiores soluta non dolor molestiae hic magnam eligendi ex vitae iusto
-          laudantium porro voluptatum cum harum consectetur. Quibusdam eos a nisi aliquid maiores
-          rerum nostrum cumque voluptas. Distinctio fuga recusandae exercitationem aliquam,
-          reiciendis in est necessitatibus modi vero provident, molestias tenetur totam veritatis
-          debitis perspiciatis. Ipsam, odit eius aliquam esse sapiente facere illum mollitia, dolore
-          sed enim alias magnam saepe quas tempora quaerat. Quam voluptate ullam harum praesentium
-          laborum. Sapiente accusamus esse amet repudiandae nobis iste eaque tenetur repellat culpa
-          numquam voluptatibus quo commodi asperiores quisquam neque blanditiis quasi voluptates
-          eligendi doloribus modi quas, vel at deleniti? Quia perferendis quos rem error saepe,
-          laboriosam libero quibusdam delectus eius accusamus at non voluptas natus hic, numquam,
-          explicabo illo quo tenetur aliquid maxime fugiat maiores. Quos, perferendis reiciendis?
-          Aut, sint. Perspiciatis veritatis facilis exercitationem quibusdam odit pariatur atque
-          odio explicabo iusto, incidunt et recusandae quia. Quidem qui culpa labore, possimus iure
-          mollitia hic enim saepe. Id perferendis velit quasi rem, possimus unde, tempore,
-          voluptates delectus odit quod a. <br />
-          <br />
+        <Title className={globalClasses.textContrastShadowHeavy} order={3}>Ruining your favorite songs since 2010</Title>
+        <Text component="p" className={globalClasses.balance} pt="1.5em" px="min(3vw, 2rem)">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti impedit dolorem sunt
           voluptas, dignissimos eius culpa nihil, explicabo molestiae a accusantium, eos rerum quas
           laborum nemo commodi doloremque minima obcaecati sint dolorum? Sunt mollitia error modi ab
@@ -51,6 +26,10 @@ export function Hero() {
           consequuntur animi impedit asperiores, quia id quod minima facere laudantium doloremque
           dolor fuga? Voluptatibus tenetur voluptatem, ipsum beatae esse vitae quo! Perspiciatis
           quidem placeat corrupti. Iste expedita explicabo voluptate! Repellendus, praesentium nemo.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt cupiditate mollitia
+          repellat accusantium cum necessitatibus delectus fugit ullam, quae quibusdam non sint.
+          Nisi earum reprehenderit quaerat omnis cum, blanditiis maxime iusto numquam. Commodi eos
+          ipsum dolorem ut, quae minima pariatur.
           <br />
           <br />
         </Text>
