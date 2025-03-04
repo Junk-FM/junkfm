@@ -1,6 +1,6 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
 
-const BREAKPOINT_TOUCH = 820;
+const BREAKPOINT_TOUCH = 900;
 
 // homemade media query function for createStyles
 export const mq = {
@@ -41,8 +41,8 @@ export const sectionBackgrounds = {
   hero: colors.black,
   home: colors.black,
   about: colors.darkBlue,
-  songs: colors.lightBlue,
-  shows: colors.gray,
+  playlist: colors.mustard,
+  shows: colors.lightBlue,
   booking: colors.yellow,
   media: colors.red,
 };
@@ -193,9 +193,14 @@ export const useGlobalStyles = createStyles(() => ({
   // --------------------------------------------- //
 
   responsiveRow: {
-    paddingInline: 'max(6vw, (100vw - 1280px)/2)',
-    // marginInline: 0,
-    // width: '100%',
+    paddingInline: 'max(6vw, (100vw - 1400px)/2)', // changed from 1280px ???
+  },
+
+  routeTopMenuPadding: {
+    paddingTop: '100px',
+    [mq.mobile]: {
+      paddingTop: '80px',
+    },
   },
 
   container: {
