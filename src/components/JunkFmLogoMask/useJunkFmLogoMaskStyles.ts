@@ -116,7 +116,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
     ovalCenterStop: {
       transition: `stop-color ${fadeInVideoDuration * 1.4}ms ease-in-out 200ms`,
       '&.fadeInVideo': {
-        stopColor: chroma(colors.gray).darken(4).alpha(0.85).hex(),
+        stopColor: chroma(colors.gray).darken(3).alpha(0.85).hex(),
       },
     },
   })

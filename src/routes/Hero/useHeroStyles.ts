@@ -1,8 +1,6 @@
 import { createStyles } from '@mantine/core';
 import { colors, mq, sectionBackgrounds } from '@junkfm';
 
-
-
 export const useHeroStyles = createStyles(() => ({
   heroWrapper: {
     paddingInline: 'max(2vw, (100vw - 1600px)/2)', // variant of row padding
@@ -14,9 +12,7 @@ export const useHeroStyles = createStyles(() => ({
       paddingTop: 'calc(60px + -4vw)',
     },
   },
-  
-  
-  
+
   heroContentWrapper: {
     textAlign: 'center',
     h3: {
@@ -33,18 +29,23 @@ export const useHeroStyles = createStyles(() => ({
       // transform: 'translate(-50%, -50%)',
       // mixBlendMode: 'color-dodge',
     },
-    
+
     // placeholder p
     p: {
       marginTop: '1em',
-      // maxWidth: '1200px',
       textAlign: 'left',
       fontWeight: 500,
       marginInline: 'auto',
       color: colors.white,
       fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+      '&:first-letter': {
+        float: 'left',
+        fontSize: '2.5em',
+        lineHeight: '0.25em',
+        marginRight: '0.1em',
+        color: colors.mustard,
+        fontWeight: 700,
+      },
     },
   },
-
-
 }));

@@ -10,27 +10,34 @@ export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
 
   const handleHamburgerClick = () => {
     open();
-    console.log('active route now:', activeRoute);
+    // log state of opened
+    console.log('opened:', opened);
   };
 
   return (
-    <Box className={classes.menuMobile}>
-      <Box onClick={handleHamburgerClick} component="button" className={classes.hamburger}>
+    <Box className={classes.menuMobile} id="menu-mobile-component">
+      <Box
+        onClick={handleHamburgerClick}
+        component="button"
+        className={classes.hamburger}
+        id="hamburger"
+      >
         <IconMenu2 size={36} strokeWidth={2} color={colors.white} />
       </Box>
 
       <Drawer
-        
+        id="mobile-menu-drawer"
         opened={opened}
         onClose={close}
-        overlayProps={{ opacity: 0.5, blur: 4 }}
+        overlayProps={{ opacity: 0.5, blur: 3 }}
         position="right"
         size="clamp(300px, 83dvw, 380px)"
         withCloseButton={false}
-        transitionProps={{ transition: 'rotate-left', duration: 170, timingFunction: 'ease-out' }}
+        padding="2rem"
+        transitionProps={{ transition: 'rotate-left', duration: 150, timingFunction: 'ease-out' }}
       >
-        <Box className={classes.mobileMenuContainerOuter} p="1em">
-          <Box className={classes.mobileMenuRoutesContainer}>
+        <Box className={classes.mobileMenuContainerOuter}>
+          <Box component="nav" className={classes.mobileMenuRoutesContainer}>
             <Link to="/" onClick={close} className={classes.mobileMenuLogoLink}>
               <JunkFmLogo width="87%" textColor={colors.black} barColor={colors.red} />
             </Link>
@@ -41,7 +48,7 @@ export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
                   key={item.link}
                   to={item.link}
                   onClick={close}
-                  className={cx(classes.mobileMenuItem)}
+                  className={cx(classes.mobileMenuItem, activeRoute === item.link && 'activePage')}
                   // revisit // todo ACTIVE ROUTE STUFF
                 >
                   <Text title={item.title} component="span">

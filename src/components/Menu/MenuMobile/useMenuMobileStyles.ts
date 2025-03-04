@@ -60,6 +60,11 @@ export const useMenuMobileStyles = createStyles(() => ({
       fontWeight: 600,
       fontFamily: '"Tilt Neon", sans-serif',
     },
+    '&.activePage': {
+      backgroundColor: chroma(colors.lightBlue).alpha(0.4).hex(),
+      pointerEvents: 'none',
+      cursor: 'default',
+    },
 
     '&:hover': {
       backgroundColor: colors.lightBlue,
@@ -67,23 +72,22 @@ export const useMenuMobileStyles = createStyles(() => ({
   },
 
   mobileMenuLogoLink: {
-      svg: {
-        transformOrigin: 'center',
-        transformBox: 'fill-box',
-        transform: 'scale(1)',
-        transition: `transform 120ms ease-out`,
-        rect: {
-          transition: `fill 120ms ease-out`,
-        },
-        '& #letters': {
-          '& path': {
-            transition: `fill 120ms ease-out, stroke 120ms ease-out`,
-          },
+    svg: {
+      transformOrigin: 'center',
+      transformBox: 'fill-box',
+      transform: 'scale(1)',
+      transition: `transform 120ms ease-out`,
+      rect: {
+        transition: `fill 120ms ease-out`,
+      },
+      '& #letters': {
+        '& path': {
+          transition: `fill 120ms ease-out, stroke 120ms ease-out`,
         },
       },
-      '&:hover': {
-        
-        svg: {
+    },
+    '&:hover': {
+      svg: {
         transition: `transform 180ms ease-out`,
         transform: 'scale(1.01)',
         rect: {
