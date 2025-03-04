@@ -33,6 +33,7 @@ export const playlistData = [
         "David Lee Murphy",
         "Garth Brooks",
         "Ginuwine",
+        "Goo Goo Dolls",
         "Green Day",
         "John Michael Montgomery",
         "Lit",
