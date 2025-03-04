@@ -25,7 +25,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
     lettersMaskBacking: {
       transform: 'translate(0, 80%)',
 
-      transition: `transform ${loadAnimationDuration * 1.2}ms ease-out 600ms, opacity ${fadeInVideoDuration}ms ease-out`,
+      transition: `transform ${loadAnimationDuration * 1.2}ms ease-out 470ms, opacity ${fadeInVideoDuration}ms ease-out`,
       '&.slideIn': {
         transform: 'translate(0, 0)',
         '&.fadeOut': {
@@ -47,7 +47,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
 
     topLineMaskBacking: {
       transform: 'translateX(110%)',
-      transition: `transform ${loadAnimationDuration}ms ease-out 300ms, opacity ${fadeInVideoDuration}ms ease-out`,
+      transition: `transform ${loadAnimationDuration}ms ease-out, opacity ${fadeInVideoDuration}ms ease-out`,
       '&.slideIn': {
         transform: 'translateX(0)',
         '&.fadeOut': {

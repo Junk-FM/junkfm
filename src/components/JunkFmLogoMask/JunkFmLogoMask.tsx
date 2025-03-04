@@ -3,10 +3,10 @@ import { Box } from '@mantine/core';
 import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
 
-const loadAnimationDelay = 400;
-const loadAnimationDuration = 800; // passed to stylesheet
-const fadeInVideoDelay = 1500;
-const fadeInVideoDuration = 800; // passed to stylesheet
+const loadAnimationDelay = 300;
+const loadAnimationDuration = 600; // passed to stylesheet
+const fadeInVideoDelay = 1200;
+const fadeInVideoDuration = 700; // passed to stylesheet
 
 export function JunkFmLogoMask() {
   const [maskColorMove, setMaskColorMove] = useState(false);
@@ -60,7 +60,7 @@ export function JunkFmLogoMask() {
           y="321"
           width="101%"
           height="54%"
-          fill={colors.red}
+          fill={colors.white}
         />
         <rect
           className={cx(
@@ -73,7 +73,7 @@ export function JunkFmLogoMask() {
           y="1123"
           width="101%"
           height="10%"
-          fill={colors.mustard}
+          fill={colors.red}
         />
         <rect
           className={cx(
@@ -86,7 +86,7 @@ export function JunkFmLogoMask() {
           y="142"
           width="101%"
           height="10%"
-          fill={colors.mustard}
+          fill={colors.red}
         />
         <defs>
           <mask id="junkfm-mask">
