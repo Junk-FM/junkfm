@@ -23,13 +23,18 @@ export const colors = {
   red: '#C42021', // Fire engine red
   darkRed: '#800E13', // Dark Red
 
+  // possible add for route matching?
+
+  pink: '#F08CAE', // Melon
+
   // --- NEON SIGN COLORS --- //
   neonLightBlue: '#3BF4FB', // Aqua
   neonYellow: '#FFFC33', // Yellow
-  neonOrange: '#FF5100', // Aerospace orange
-  neonGreen: '#6CFF5C', // Screamin' Green
   neonPink: '#FF01FB', // Fuchsia
   neonBlue: '#0044FF', // Palatinate Blue
+  neonOrange: '#FF5100', // Aerospace orange
+  neonGreen: '#6CFF5C', // Screamin' Green
+  neonRed: '#FF0000', // Red
 };
 
 // ------------------------------------------ //
@@ -42,9 +47,9 @@ export const sectionBackgrounds = {
   home: colors.black,
   about: colors.darkBlue,
   playlist: colors.mustard,
-  shows: colors.lightBlue,
+  schedule: colors.pink,
   booking: colors.yellow,
-  media: colors.red,
+  media: colors.lightBlue,
 };
 
 // ------------------------------------------ //

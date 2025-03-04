@@ -1,5 +1,6 @@
 import { createStyles } from '@mantine/core';
 import { colors, sectionBackgrounds, mq } from '@junkfm';
+import chroma from 'chroma-js';
 
 export const usePlaylistStyles = createStyles(() => ({
   playlistOutermost: {
@@ -12,12 +13,13 @@ export const usePlaylistStyles = createStyles(() => ({
       fontSize: 'clamp(3rem, 7vw, 5rem)',
     },
     h5: {
-      color: colors.darkRed,
+      color: chroma(colors.gray).darken(2.5).css(),
       fontFamily: '"Poppins", sans-serif',
       textAlign: 'center',
       marginBlock: '0.5em 2em',
       fontWeight: 500,
-      fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+      fontStyle: 'italic',
+      letterSpacing: '0.045em',
     },
   },
 

@@ -8,10 +8,10 @@ export type MenuItem = {
 
 export const menuItems: MenuItem[] = [
   { title: 'About', link: '/about', neonColor: colors.neonLightBlue },
-  { title: 'Playlist', link: '/playlist', neonColor: colors.neonPink },
-  { title: 'Shows', link: '/shows', neonColor: colors.neonOrange },
+  { title: 'Playlist', link: '/playlist', neonColor: colors.neonYellow },
+  { title: 'Schedule', link: '/schedule', neonColor: colors.neonPink },
   { title: 'Contact', link: '/contact', neonColor: colors.neonBlue }, // revisit neonGreen instead??
-  { title: 'Media', link: '/media', neonColor: colors.neonYellow },
+  { title: 'Media', link: '/media', neonColor: colors.neonOrange },
 ];
 
 
