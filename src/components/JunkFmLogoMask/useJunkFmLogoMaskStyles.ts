@@ -1,5 +1,6 @@
 import { createStyles } from '@mantine/core';
-import { sectionBackgrounds } from '@junkfm';
+import { colors } from '@junkfm';
+import chroma from 'chroma-js';
 
 interface JunkFmLogoMaskStyles {
   loadAnimationDuration: number;
@@ -15,7 +16,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
     // ---------------------------------------------------- //
 
     crucialMaskFill: {
-      fill: sectionBackgrounds.hero,
+      // was hero bg - now in SVG
     },
 
     junkLogoMaskBacking: {
@@ -24,8 +25,7 @@ export const useJunkFmLogoMaskStyles = createStyles(
 
     lettersMaskBacking: {
       transform: 'translate(0, 80%)',
-
-      transition: `transform ${loadAnimationDuration * 1.2}ms ease-out 470ms, opacity ${fadeInVideoDuration}ms ease-out`,
+      transition: `transform ${loadAnimationDuration * 1.2}ms ease-out 400ms, opacity ${fadeInVideoDuration}ms ease-out`,
       '&.slideIn': {
         transform: 'translate(0, 0)',
         '&.fadeOut': {
@@ -70,16 +70,6 @@ export const useJunkFmLogoMaskStyles = createStyles(
       alignItems: 'center',
       aspectRatio: '16 / 7.6',
       flexDirection: 'column',
-      // [mq.customMax(1350)]: {
-        
-      //   marginTop: 'calc(99px + -7.9vw)',  
-      // },
-      // [mq.customMax(800)]: {
-      //   marginTop: 'calc(76px + -7.7vw)',  
-      // },
-      // [mq.customMax(575)]: {
-      //   marginTop: 'calc(53px + -4.9vw)',
-      // }
     },
 
     video: {
@@ -90,13 +80,44 @@ export const useJunkFmLogoMaskStyles = createStyles(
         opacity: 1,
       },
     },
+
+    // for edge definition
+    videoOverlay: {
+      width: '100%',
+      height: '180%',
+      backgroundColor: 'white',
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      left: '0',
+      zIndex: 0,
+      background: `radial-gradient(ellipse at center, 
+      ${colors.black}10 30%,
+      ${colors.gray}15 40%,
+      ${chroma(colors.lightBlue).brighten(1).saturate(0.3).hex()}20 80%,
+      ${chroma(colors.lightBlue).brighten(1).saturate(0.3).hex()}20 100%)`,
+      opacity: 0,
+      transition: `opacity ${fadeInVideoDuration}ms ease-in-out 300ms`,
+      '&.fadeInOverlay': {
+        opacity: 1,
+      },
+      // mixBlendMode: 'difference', // IDEA CYCLE THROUGH THESE ON A TIMER??
+    },
+
     junkFmLogoMaskSvg: {
       position: 'absolute',
       top: '0',
       width: '100%',
       height: 'auto',
       overflow: 'hidden',
+    },
 
+    // "spotlight" for logo visibility
+    ovalCenterStop: {
+      transition: `stop-color ${fadeInVideoDuration * 1.4}ms ease-in-out 200ms`,
+      '&.fadeInVideo': {
+        stopColor: chroma(colors.gray).darken(4).alpha(0.85).hex(),
+      },
     },
   })
 );

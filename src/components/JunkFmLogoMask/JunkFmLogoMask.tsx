@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Box } from '@mantine/core';
 import { useJunkFmLogoMaskStyles, colors } from '@junkfm';
 import sampleVideo from './clips/junk-sample-clip-fishin.mp4';
+import chroma from 'chroma-js';
 
 const loadAnimationDelay = 300;
 const loadAnimationDuration = 600; // passed to stylesheet
@@ -39,6 +40,7 @@ export function JunkFmLogoMask() {
         playsInline
         src={sampleVideo}
       />
+      <Box className={cx(classes.videoOverlay, fadeInVideo && 'fadeInOverlay')} />
 
       <svg
         className={classes.junkFmLogoMaskSvg}
@@ -88,6 +90,8 @@ export function JunkFmLogoMask() {
           height="10%"
           fill={colors.red}
         />
+          {/* fill rect - cover right side 1px gap */}
+        <rect x="calc(100% - 1px)" y="0" width="100" height="100%" fill={colors.black} />
         <defs>
           <mask id="junkfm-mask">
             <rect width="100%" height="100%" fill={colors.white} />
@@ -127,16 +131,37 @@ export function JunkFmLogoMask() {
             </g>
           </mask>
         </defs>
+        {/* IMPORTANT MASK FILL */}
         <rect
           className={classes.crucialMaskFill}
           width="100%"
           height="100%"
           mask="url(#junkfm-mask)"
+          fill="url(#oval-gradient)"
         />
         <defs>
           <clipPath id="clip0_888_196">
             <rect width="2743" height="1434" fill={colors.white} />
           </clipPath>
+
+          {/* idea oval gradient  */}
+          <radialGradient
+            id="oval-gradient"
+            cx="50%"
+            cy="50%"
+            r="80%"
+            fx="50%"
+            fy="50%"
+            spreadMethod="pad"
+          >
+            <stop
+              className={cx(classes.ovalCenterStop, fadeInVideo && 'fadeInVideo')}
+              offset="0%"
+              stopColor={chroma(colors.black).hex()}
+            />
+            <stop offset="52%" stopColor={colors.black} />
+          </radialGradient>
+          {/* idea oval gradient  */}
         </defs>
       </svg>
     </Box>
