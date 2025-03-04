@@ -11,7 +11,9 @@ interface EventData {
   venue: {
     name: string;
     city: string;
+    region: string;
     country: string;
+    street_address: string;
   };
   url: string;
 }
