@@ -49,6 +49,7 @@ export const usePlaylistStyles = createStyles(() => ({
 
     // SIDEWAYS TEXT
     h2: {
+      opacity: 0.6,
       position: 'absolute',
       left: 0,
       zIndex: 0,
