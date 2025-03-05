@@ -30,7 +30,7 @@ export function Playlist() {
             to...whose songs you'll never wanna hear the same way again.
           </Text>
         </Box>
-        <Grid className={classes.playlistGridWrapper} id="playlist-wrapper">
+        <Grid className={classes.playlistGridWrapper} id="playlist-wrapper" pb="min(7rem, calc(5vh + 4vw))">
           {playlistData.map((section, index) => (
             <Grid.Col
               className={cx(classes.playlistGridCol, `col${index}`)}

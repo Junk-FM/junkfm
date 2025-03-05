@@ -9,7 +9,7 @@ export function Hero() {
   const { classes: globalClasses } = useGlobalStyles();
 
   return (
-    <Box className={cx(classes.heroWrapper)} id="hero">
+    <Box className={cx(classes.heroWrapper)} id="hero" pb="min(5rem, calc(3vh + 3vw))">
       <PageHelmet />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>

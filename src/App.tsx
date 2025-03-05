@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Box } from '@mantine/core';
-import { useGlobalStyles, Menu } from '@junkfm';
+import { useGlobalStyles, Menu, Footer } from '@junkfm';
 import { Hero, Playlist, Schedule, Contact } from './routes';
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/playlist" element={<Playlist />} />
         <Route path="/schedule" element={<Schedule />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Box>
   );
 }
 
 export default App;
- 

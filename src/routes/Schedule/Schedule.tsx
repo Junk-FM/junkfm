@@ -8,13 +8,13 @@ export function Schedule() {
 
   if (loading)
     return (
-      <Text component="p" color="white">
+      <Text component="p" color="white" mx="auto" pt="300px">
         Loading upcoming shows...
       </Text>
     );
   if (error)
     return (
-      <Text component="p" color="white">
+      <Text component="p" color="white" mx="auto" pt="300px">
         Error: {error}
       </Text>
     );
@@ -42,6 +42,7 @@ export function Schedule() {
         classes.scheduleOutermostWrapper
       )}
       id="schedule"
+      pb="min(6rem, calc(5vh + 4vw))"
     >
       <Title order={1} pb="0.5em">
         Schedule
