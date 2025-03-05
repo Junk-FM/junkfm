@@ -1,9 +1,21 @@
-import { Box, Text } from "@mantine/core";
+import { Box, Title } from '@mantine/core';
+import { useContactStyles, useGlobalStyles } from '@junkfm';
 
 export function Contact() {
-    return (
-        <Box id="contact-box" >
-            <Text order={2}>Contact Us</Text>
-        </Box>
-    )
+  const { classes, cx } = useContactStyles();
+  const { classes: globalClasses } = useGlobalStyles();
+
+  return (
+    <Box
+      className={cx(
+        globalClasses.responsiveRow,
+        globalClasses.routeTopMenuPadding,
+        classes.contactOutermostWrapper
+      )}
+      id="contact"
+    >
+      <Title order={1}>HIT US UP</Title>
+      <Box className={classes.formWrapper}></Box>
+    </Box>
+  );
 }

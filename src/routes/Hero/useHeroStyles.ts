@@ -15,9 +15,9 @@ export const useHeroStyles = createStyles(() => ({
 
   heroContentWrapper: {
     textAlign: 'center',
-    h3: {
+    h4: {
       color: colors.mustard,
-      fontWeight: 500,
+      fontWeight: 400,
       marginBlock: '0.2em 0.75em',
       width: '100%',
       textWrap: 'balance',

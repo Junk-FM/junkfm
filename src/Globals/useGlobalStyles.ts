@@ -1,4 +1,5 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
+import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 900;
 
@@ -42,13 +43,12 @@ export const colors = {
 // ------------------------------------------ //
 
 export const sectionBackgrounds = {
-  menu: colors.black,
-  hero: colors.black,
-  home: colors.black,
+  menu: colors.black, // route built
+  hero: colors.black, // route built
   about: colors.darkBlue,
-  playlist: colors.mustard,
-  schedule: colors.pink,
-  booking: colors.yellow,
+  playlist: chroma(colors.black).darken(0.2).hex(),
+  schedule: colors.pink, // route built
+  contact: colors.darkBlue, // route built
   media: colors.lightBlue,
 };
 
@@ -164,7 +164,7 @@ export const useGlobalStyles = createStyles(() => ({
     },
     p: {
       fontFamily: '"Poppins", sans-serif',
-      fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+      fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
       fontWeight: 400,
     },
   },
@@ -199,8 +199,8 @@ export const useGlobalStyles = createStyles(() => ({
 
   responsiveRow: {
     paddingInline: 'max(6vw, (100vw - 1400px)/2)', // changed from 1280px ???
-    [mq.mobile]: {
-      paddingInline: '3vw',
+    [mq.customMax(768)]: {
+      paddingInline: '4vw',
     },
   },
 
@@ -231,7 +231,7 @@ export const useGlobalStyles = createStyles(() => ({
   },
 
   textContrastShadowHeavy: {
-    textShadow: `3px 1px 5px ${colors.black}60, -3px -1px 5px ${colors.black}60, 3px -1px 5px ${colors.black}60, -3px 1px 5px ${colors.black}60`,
+    textShadow: `3px 2px 5px ${colors.black}70, -5px -2px 5px ${colors.black}70, 3px -2px 5px ${colors.black}70, -5px 2px 5px ${colors.black}70`,
   },
 
   // ----------------------------------------- //

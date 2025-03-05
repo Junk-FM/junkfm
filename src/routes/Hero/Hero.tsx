@@ -13,7 +13,7 @@ export function Hero() {
       <PageHelmet />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
-        <Title className={globalClasses.textContrastShadowHeavy} order={3}>
+        <Title order={4}>
           Ruining your favorite songs since 2010
         </Title>
         <Text component="p" className={globalClasses.balance} pt="1.5em" px="min(3vw, 2rem)">
