@@ -6,7 +6,7 @@ export const usePlaylistStyles = createStyles(() => ({
   playlistOutermost: {
     backgroundColor: sectionBackgrounds.playlist,
     h1: {
-      color: chroma(colors.mustard).alpha(0.6).hex(),
+      color: chroma(colors.mustard).alpha(0.8).hex(),
       textAlign: 'left',
       fontWeight: 700,
       WebkitTextStroke: `0.02em ${colors.white}`,
