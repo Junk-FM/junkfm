@@ -23,7 +23,7 @@ export function Contact() {
         // REVISIT NO WHITE BG - FIX...recreate w/ css?
         alt="contact us"
         height="auto"
-        width="300px"
+        width="400px"
         mx="auto"
         pt="3em"
       />
