@@ -1,28 +1,16 @@
 import { Box, Title, Text } from '@mantine/core';
 import { useHeroStyles, JunkFmLogoMask, PageHelmet, useGlobalStyles, JunkFmLogo } from '@junkfm';
 
-// deletelater
-import { useBandsintown } from '@junkfm';
-import { useEffect } from 'react';
-
 
 export function Hero() {
 
-  const { data, loading, error } = useBandsintown("1026065", "events"); //deletelater
-
-  useEffect(() => {
-    console.log("Loading:", loading);
-    console.log("Error:", error);
-    console.log("Data:", data);
-    console.log("Data[0].venue", data?.[0].venue);
-  }, [data, loading, error]); // Log whenever data updates//deletelater
 
   const { classes, cx } = useHeroStyles();
   const { classes: globalClasses } = useGlobalStyles();
 
   return (
     <Box className={cx(classes.heroWrapper)} id="hero">
-      <PageHelmet title="Hero" />
+      <PageHelmet />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
         <Title className={globalClasses.textContrastShadowHeavy} order={3}>

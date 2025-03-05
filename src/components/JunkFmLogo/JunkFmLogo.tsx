@@ -112,12 +112,8 @@ export function JunkFmLogo(props: JunkFmLogoProps) {
             />
           </g>
         </g>
-        <rect id="top-line" width="2760" height="128" fill={barColor || colors.red}  />
+        <rect id="top-line" width="2760" height="128" fill={barColor || colors.red} />
       </g>
     </svg>
   );
 }
-
-
-
-
