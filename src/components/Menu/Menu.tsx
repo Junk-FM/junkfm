@@ -8,9 +8,8 @@ import { useLocation } from 'react-router-dom';
 export function Menu() {
   const isMobile = useIsMobile();
   const [scrolled, setScrolled] = useState(false);
-  const [logoTapped, setLogoTapped] = useState(false);
   const activeRoute = useLocation().pathname;
-  const { classes, cx } = useMenuStyles({ isMobile, activeRoute, logoTapped });
+  const { classes, cx } = useMenuStyles({ isMobile, activeRoute });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,22 +21,10 @@ export function Menu() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  console.log('logoTapped:', logoTapped);
-
-  const handleTap = () => {
-    console.log("handleTap called!");
-    if (isMobile) {
-      setLogoTapped(true);
-      setTimeout(() => {
-        setLogoTapped(false);
-      }, 2000);
-    }
-  };
-
   return (
     <Box component="nav" className={cx(classes.menu, scrolled && 'scrolled')} id="menu">
       <Box className={cx(classes.menuInner)} id="menu-inner">
-        <Link to="/" className={classes.logoLink} onClick={handleTap}>
+        <Link to="/" className={classes.logoLink}>
           <JunkFmHeaderLogo height="75%" textColor={colors.white} />
         </Link>
         {isMobile ? (

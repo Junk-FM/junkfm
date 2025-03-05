@@ -5,13 +5,12 @@ import chroma from 'chroma-js';
 export interface MenuStylesProps {
   isMobile: boolean;
   activeRoute: string;
-  logoTapped: boolean;
 }
 
 export const lightEase = 'cubic-bezier(0.41, 0.09, 0.44, 0.89)';
 
 export const useMenuStyles = createStyles(
-  (_, { isMobile, activeRoute, logoTapped }: MenuStylesProps) => ({
+  (_, { isMobile, activeRoute }: MenuStylesProps) => ({
     menu: {
       width: '100dvw',
       height: isMobile ? '65px' : '80px',
