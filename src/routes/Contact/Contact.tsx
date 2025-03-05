@@ -1,4 +1,4 @@
-import { Box, Title } from '@mantine/core';
+import { Box, Title, Image } from '@mantine/core';
 import { useContactStyles, useGlobalStyles } from '@junkfm';
 
 export function Contact() {
@@ -15,7 +15,18 @@ export function Contact() {
       id="contact"
     >
       <Title order={1}>HIT US UP</Title>
-      <Box className={classes.formWrapper}></Box>
+      <Box className={classes.formWrapper}>
+        <Title order={5}>form goes in here???</Title>
+      </Box>
+      <Image
+        src="https://timemusicagency.com/wp-content/uploads/2021/07/tma-animated.gif"
+        // REVISIT NO WHITE BG - FIX...recreate w/ css?
+        alt="contact us"
+        height="auto"
+        width="300px"
+        mx="auto"
+        pt="3em"
+      />
     </Box>
   );
 }

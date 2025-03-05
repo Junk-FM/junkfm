@@ -9,9 +9,8 @@ export const usePlaylistStyles = createStyles(() => ({
       color: chroma(colors.mustard).alpha(0.8).hex(),
       textAlign: 'left',
       fontWeight: 700,
-      WebkitTextStroke: `0.02em ${colors.white}`,
+      WebkitTextStroke: `0.026em ${colors.white}`,
       marginBlock: '0.25 0',
-      fontSize: 'clamp(3rem, 7vw, 5rem)',
     },
   },
 

@@ -1,9 +1,12 @@
 import { createStyles } from '@mantine/core';
-import { sectionBackgrounds } from '@junkfm';
+import { sectionBackgrounds, colors } from '@junkfm';
 
 export const useScheduleStyles = createStyles(() => ({
   scheduleOutermostWrapper: {
     backgroundColor: sectionBackgrounds.schedule,
+    h1: {
+      WebkitTextStroke: `0.026em ${colors.yellow}`,
+    },
   },
 
   scheduleBoxWrapper: {

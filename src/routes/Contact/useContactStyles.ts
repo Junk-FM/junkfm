@@ -8,8 +8,10 @@ export const useContactStyles = createStyles(() => ({
     background: sectionBackgrounds.contact,
     minHeight: '100vh',
     h1: {
+
       textAlign: 'center',
       paddingBlock: '0.15em 0.4em',
+      WebkitTextStroke: `0.026em ${colors.white}`,
     },
   },
   formWrapper: {
@@ -19,5 +21,9 @@ export const useContactStyles = createStyles(() => ({
     backgroundColor: chroma(colors.black).alpha(0.5).hex(),
     border: `3px solid ${colors.mustard}`,
     borderRadius: '8px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }));

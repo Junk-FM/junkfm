@@ -44,7 +44,7 @@ export function Schedule() {
       id="schedule"
     >
       <Title order={1} pb="0.5em">
-        Schedule Page
+        Schedule
       </Title>
       <Box className={classes.scheduleBoxWrapper}>
         {upcomingShows?.map((show) => (
