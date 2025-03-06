@@ -280,4 +280,5 @@ export const useGlobalStyles = createStyles(() => ({
   z20: {
     zIndex: 20,
   },
+  
 }));
