@@ -25,16 +25,6 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     alignItems: 'flex-end',
     zIndex: 100,
     boxShadow: `0 -15px 30px ${chroma(colors.lightBlue).alpha(0.8).hex()}`,
-
-    // copyright text bottom center
-    h6: {
-      color: colors.lightBlue,
-      paddingBlock: 0,
-      marginBlock: 0,
-      fontWeight: 100,
-      fontSize: 'clamp(14px, 1.5vw, 15px)',
-      fontFamily: '"Poppins", sans-serif',
-    },
   },
 
   // flex row - full width of footer
@@ -69,7 +59,15 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
   },
 
   footerMiddleLower: {
-    // wrapper of socials and copyright
+    h6: {
+      color: colors.lightBlue,
+      paddingBlock: 0,
+      marginBlock: 0,
+      letterSpacing: '0.08em',
+      fontWeight: 200,
+      fontSize: 'clamp(14px, 1.5vw, 15px)',
+      fontFamily: '"Poppins", sans-serif',
+    },
   },
 
   //footer sec 3 right wrapper
@@ -171,12 +169,12 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     fontFamily: '"Poppins", sans-serif',
     fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
     fontWeight: 500,
-    color: colors.white,
+    color: colors.lightBlue,
     textDecoration: 'none',
     padding: '1em',
 
     '&:hover': {
-      color: colors.lightBlue,
+      color: colors.white,
     },
   },
 
@@ -185,15 +183,16 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBlock: 0,
-    width: '100%',
+    width: '70%',
     marginInline: 'auto',
     a: {
       flexBasis: '20%',
       maxWidth: '20%',
       svg: {
+        display: 'block',
         width: '100%',
         height: 'auto',
-        maxHeight: '34px',
+        maxHeight: '32px',
         stroke: colors.white,
       },
 
