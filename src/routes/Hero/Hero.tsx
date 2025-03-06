@@ -1,10 +1,8 @@
-import { Box, Title, Text } from '@mantine/core';
-import { useHeroStyles, JunkFmLogoMask, PageHelmet, useGlobalStyles, JunkFmLogo } from '@junkfm';
-
+import { Box, Title, Text, Image } from '@mantine/core';
+import { useHeroStyles, JunkFmLogoMask, PageHelmet, useGlobalStyles } from '@junkfm';
+import youtubeCover from '../../assets/photos/youtube-cover.png';
 
 export function Hero() {
-
-
   const { classes, cx } = useHeroStyles();
   const { classes: globalClasses } = useGlobalStyles();
 
@@ -13,9 +11,7 @@ export function Hero() {
       <PageHelmet />
       <JunkFmLogoMask />
       <Box className={classes.heroContentWrapper}>
-        <Title order={4}>
-          Ruining your favorite songs since 2010
-        </Title>
+        <Title order={4}>Ruining your favorite songs since 2010</Title>
         <Text component="p" className={globalClasses.balance} pt="1.5em" px="min(3vw, 2rem)">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti impedit dolorem sunt
           voluptas, dignissimos eius culpa nihil, explicabo molestiae a accusantium, eos rerum quas
@@ -38,7 +34,12 @@ export function Hero() {
           <br />
           <br />
         </Text>
-        <JunkFmLogo width="clamp(200px, 80%, 900px)" />
+        <Image
+          src={youtubeCover}
+          alt="Junk FM YouTube channel cover"
+          width="clamp(240px ,90%, 850px)"
+          mx="auto"
+        />
         <Text component="p" className={globalClasses.balance} pt="1.5em" px="min(3vw, 2rem)">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti impedit dolorem sunt
           voluptas, dignissimos eius culpa nihil, explicabo molestiae a accusantium, eos rerum quas

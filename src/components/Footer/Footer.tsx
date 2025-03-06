@@ -1,5 +1,12 @@
 import { Box, Image, Text, Anchor } from '@mantine/core';
-import { useFooterStyles, useIsMobile, JunkFmLogo, colors, useGlobalStyles } from '@junkfm';
+import {
+  useFooterStyles,
+  useIsMobile,
+  JunkFmLogo,
+  colors,
+  useGlobalStyles,
+  menuItems,
+} from '@junkfm';
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -23,12 +30,15 @@ export function Footer() {
           </Link>
         </Box>
         <Box className={classes.footerMiddle}>
-          <Box className={classes.footerMiddleLower}>
-            {/* {menuItems.map((item) => (
-              <Link key={item.id} to={item.route} className={classes.footerMenuItem}>
-                <Text component="span">{item.name}</Text>
+          <Box className={classes.footerLinksWrapper}>
+
+            {menuItems.map((item) => (
+              <Link key={item.title} to={item.link} className={classes.footerMenuItem}>
+                <Text component="span">{item.title}</Text>
               </Link>
-            ))} */}
+            ))}
+            </Box>
+          <Box className={classes.footerMiddleLower}>
             <Box className={classes.socialMediaRow}>
               <Anchor href="https://www.facebook.com/junkfm/" target="_blank" rel="noreferrer">
                 <IconBrandFacebook />

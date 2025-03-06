@@ -39,7 +39,7 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
 
   // flex row - full width of footer
   footerInnerWrapper: {
-    paddingBottom: 'min(1.25rem, calc(1vw + 1vh))',
+    paddingBottom: 'min(1.25rem, calc(1vw + 2vh))',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -64,7 +64,8 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '0em',
+    height: '100%',
+    width: '100%',
   },
 
   footerMiddleLower: {
@@ -81,6 +82,7 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     justifyContent: 'flex-end',
     a: {
       maxWidth: '400px',
+      width: '90%',
     },
   },
 
@@ -123,12 +125,11 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
           transformBox: 'fill-box',
           transform: 'scaleY(1)',
           transition: 'all 200ms ease',
-        },  
+        },
       },
     },
     // -------- HOVER FOOTER LOGO -------- /
     '&:hover': {
-
       svg: {
         borderRadius: '8px',
         '& #letters': {
@@ -151,10 +152,31 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
           '&#top-line': {
             fill: chroma(colors.red).alpha(0).hex(),
             transform: 'scaleY(0)',
-
-        },
+          },
         },
       },
+    },
+  },
+
+  footerLinksWrapper: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  footerMenuItem: {
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
+    fontWeight: 500,
+    color: colors.white,
+    textDecoration: 'none',
+    padding: '1em',
+
+    '&:hover': {
+      color: colors.lightBlue,
     },
   },
 
