@@ -11,7 +11,7 @@ export const mq = {
   desktop: `@media (min-width: ${BREAKPOINT_TOUCH + 1}px)`,
 };
 
-// color names via Coolers //
+// PRIMARY (via Coolers)
 export const colors = {
   trueBlack: '#000000', // True black
   black: '#12130F', // Night
@@ -24,18 +24,28 @@ export const colors = {
   red: '#C42021', // Fire engine red
   darkRed: '#800E13', // Dark Red
 
-  // possible add for route matching?
+  // PRIMARY (via Coolers)
 
-  pink: '#F08CAE', // Melon
+  mediumGreen: '#6CAE75', // Asparagus
+  softGreen: '#B7DE95', // celadon
+  pink: '#F092BE', // Amaranth pink
+  darkPurple: '#533A7B', // Tekhelet
+  lightPurple: '#9D8DF1', // Tropical Indigo
+  rust: '#CC3F0C', // Sinopia
+  orange: '#FB5012', // Tangelo
+  tangerine: '#F68E5F', // Tangerine
+  almostWhite: '#FFFFFB', // Baby powder
+  tan: '#DBCFB0', // Dun
 
   // --- NEON SIGN COLORS --- //
-  neonLightBlue: '#3BF4FB', // Aqua
-  neonYellow: '#FFFC33', // Yellow
-  neonPink: '#FF01FB', // Fuchsia
   neonBlue: '#0044FF', // Palatinate Blue
-  neonOrange: '#FF5100', // Aerospace orange
+  neonLightBlue: '#3BF4FB', // Aqua
   neonGreen: '#6CFF5C', // Screamin' Green
+  neonYellow: '#FFFC33', // Yellow
+  neonWhite: '#FFF3F0', // Seashell
   neonRed: '#FF0000', // Red
+  neonOrange: '#FF6200', // Orange (Pantone)
+  neonPink: '#FF01FB', // Fuchsia
 };
 
 // ------------------------------------------ //
@@ -280,5 +290,4 @@ export const useGlobalStyles = createStyles(() => ({
   z20: {
     zIndex: 20,
   },
-  
 }));
