@@ -1,5 +1,5 @@
 import { Box, Image, Text, Anchor } from '@mantine/core';
-import { useFooterStyles, useIsMobile, JunkFmLogo, colors } from '@junkfm';
+import { useFooterStyles, useIsMobile, JunkFmLogo, colors, useGlobalStyles } from '@junkfm';
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -12,15 +12,23 @@ import timeGif from '../../assets/gifs/time-animated.gif';
 export function Footer() {
   const isMobile = useIsMobile();
   const { classes, cx } = useFooterStyles({ isMobile });
+  const { classes: globalClasses } = useGlobalStyles();
 
   return (
     <Box className={cx(classes.footerOutermostWrapper)}>
-      <Box className={classes.footerInnerWrapper}>
+      <Box className={cx(globalClasses.responsiveRow, classes.footerInnerWrapper)}>
         <Box className={classes.footerLeft}>
-          <Box className={classes.footerLeftInner}>
-            <Link to="/" className={classes.footerLogoLink}>
-              <JunkFmLogo width="100%" barColor={colors.red} textColor={colors.gray} />
-            </Link>
+          <Link to="/" className={classes.footerLogoLink}>
+            <JunkFmLogo width="100%" barColor={colors.red} textColor={colors.gray} />
+          </Link>
+        </Box>
+        <Box className={classes.footerMiddle}>
+          <Box className={classes.footerMiddleLower}>
+            {/* {menuItems.map((item) => (
+              <Link key={item.id} to={item.route} className={classes.footerMenuItem}>
+                <Text component="span">{item.name}</Text>
+              </Link>
+            ))} */}
             <Box className={classes.socialMediaRow}>
               <Anchor href="https://www.facebook.com/junkfm/" target="_blank" rel="noreferrer">
                 <IconBrandFacebook />
@@ -35,20 +43,19 @@ export function Footer() {
                 <IconBrandYoutube />
               </Anchor>
             </Box>
+            <Text component="h6">
+              <Text component="span">Copyright &copy; 2021 Junk FM</Text>
+              <Text component="span"> - </Text>
+              <Text component="span">All Rights Reserved</Text>
+            </Text>
           </Box>
         </Box>
-        <Box className={classes.footerMiddle}></Box>
         <Box className={classes.footerRight}>
           <Anchor href="https://timemusicagency.com" target="_blank" rel="noreferrer">
             <Image src={timeGif} alt="Time Music Agency animated GIF" width="100%" />
           </Anchor>
         </Box>
       </Box>
-      <Text component="h6">
-        <Text component="span">Copyright &copy; 2021 Junk FM</Text>
-        <Text component="span"> - </Text>
-        <Text component="span">All Rights Reserved</Text>
-      </Text>
     </Box>
   );
 }
