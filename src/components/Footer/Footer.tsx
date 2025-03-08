@@ -1,12 +1,5 @@
-import { Box, Image, Text, Anchor } from '@mantine/core';
-import {
-  useFooterStyles,
-  useIsMobile,
-  JunkFmLogo,
-  colors,
-  useGlobalStyles,
-  menuItems,
-} from '@junkfm';
+import { Box, Grid, Image, Text, Anchor } from '@mantine/core';
+import { useFooterStyles, JunkFmLogo, colors, useGlobalStyles, menuItems } from '@junkfm';
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -18,27 +11,25 @@ import { Link } from 'react-router-dom';
 import timeGif from '../../assets/gifs/time-animated.gif';
 
 export function Footer() {
-  const isMobile = useIsMobile();
-  const { classes, cx } = useFooterStyles({ isMobile });
+  const { classes, cx } = useFooterStyles();
   const { classes: globalClasses } = useGlobalStyles();
 
   return (
     <Box component="footer" id="footer" className={cx(classes.footerOutermostWrapper)}>
-      <Box className={cx(globalClasses.responsiveRow, classes.footerInnerWrapper)}>
-        <Box className={classes.footerLeft}>
+      <Grid grow className={cx(globalClasses.responsiveRow, classes.footerInnerWrapper)}>
+        <Grid.Col span={12} order={1} xs={4} sm={12} className={classes.footerLinksWrapper}>
+          {menuItems.map((item) => (
+            <Link key={item.title} to={item.link} className={classes.footerMenuItem}>
+              <Text component="span">{item.title}</Text>
+            </Link>
+          ))}
+        </Grid.Col>
+        <Grid.Col span={12} order={2} xs={6} sm={2.5} md={3} className={classes.footerLeft}>
           <Link to="/" className={classes.footerLogoLink}>
             <JunkFmLogo width="100%" barColor={colors.red} textColor={colors.gray} />
           </Link>
-        </Box>
-        <Box className={classes.footerMiddle}>
-          <Box className={classes.footerLinksWrapper}>
-
-            {menuItems.map((item) => (
-              <Link key={item.title} to={item.link} className={classes.footerMenuItem}>
-                <Text component="span">{item.title}</Text>
-              </Link>
-            ))}
-            </Box>
+        </Grid.Col>
+        <Grid.Col span={12} xs={12} order={3} orderSm={2} sm={6} md={6} className={classes.footerMiddle}>
           <Box className={classes.footerMiddleLower}>
             <Box className={classes.socialMediaRow}>
               <Anchor href="https://www.facebook.com/junkfm/" target="_blank" rel="noreferrer">
@@ -63,13 +54,13 @@ export function Footer() {
               <Text component="span">All Rights Reserved</Text>
             </Text>
           </Box>
-        </Box>
-        <Box className={classes.footerRight}>
+        </Grid.Col>
+        <Grid.Col span={12} order={2} orderSm={3} xs={6} sm={2.5} md={3} className={classes.footerRight}>
           <Anchor href="https://timemusicagency.com" target="_blank" rel="noreferrer">
             <Image src={timeGif} alt="Time Music Agency animated GIF" width="100%" />
           </Anchor>
-        </Box>
-      </Box>
+        </Grid.Col>
+      </Grid>
     </Box>
   );
 }

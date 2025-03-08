@@ -222,10 +222,14 @@ export const useGlobalStyles = createStyles(() => ({
     },
   },
 
+  // outermost component all routes - compensate for menu
+  // and height jives with footer for short content
   routeTopMenuPadding: {
     paddingTop: '100px',
+    // minHeight: 'calc(100dvh - 200px)', // revisit footer compensate
     [mq.mobile]: {
       paddingTop: '80px',
+      // minHeight: 'calc(100dvh - 160px)', // revisit footer compensate
     },
   },
 

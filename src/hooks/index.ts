@@ -1,2 +1,2 @@
 export * from './useIsMobile';
-export * from './useBandsInTown';
+export * from './useBandsintown';

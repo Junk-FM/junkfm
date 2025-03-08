@@ -1,12 +1,8 @@
 import { createStyles } from '@mantine/core';
-import { colors } from '@junkfm';
+import { colors, mq } from '@junkfm';
 import chroma from 'chroma-js';
 
-export interface FooterStylesProps {
-  isMobile: boolean;
-}
-
-export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps) => ({
+export const useFooterStyles = createStyles(() => ({
   footerOutermostWrapper: {
     backgroundColor: chroma(colors.black).darken(0.1).alpha(1).hex(),
     backdropFilter: 'blur(5px) brightness(0.8)',
@@ -17,8 +13,6 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     left: 0,
     right: 0,
     width: '100%',
-    height: isMobile ? '160px' : '200px',
-    maxHeight: isMobile ? '160px' : '200px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -28,52 +22,75 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
   },
 
   // flex row - full width of footer
+  // copy similar header menu treatment
   footerInnerWrapper: {
-    paddingBottom: 'min(1.25rem, calc(1vw + 2vh))',
+    margin: 0,
+    paddingBlock: 'min(1.25rem, calc(2vw + 2vh))',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     height: '100%',
     width: '100%',
-    gap: '5%',
+    [mq.customMax(1200)]: {
+      paddingInline: 'max(2vw, (100vw - 1600px)/2)',
+    },
+    [mq.customMax(768)]: {
+      display: 'grid', // idea
+      gridTemplateColumns: '1fr 2fr',
+      gridTemplateRows: '2fr 1fr 1fr',
+      alignItems: 'start',
+      
+      marginInline: 'auto',
+      paddingBottom: 'min(1em, calc(0.5vw + 0.5vh))',
+      paddingInline: '6vw',
+    },
+    [mq.customMax(575)]: {
+      gridTemplateColumns: '1fr 3fr',
+      paddingInline: '3vw',
+    },
   },
 
-  // footer sec 1 left wrapper
+  // item 2 - jnk logo
   footerLeft: {
-    flexBasis: '25%',
-    maxWidth: '25%',
     display: 'flex',
     justifyContent: 'flex-start',
+    [mq.customMax(768)]: {
+      justifyContent: 'flex-end',
+      alignItems: 'flex-start',
+      gridRow: '1',
+      gridColumn: '2',
+      paddingRight: '1vw',
+    },
   },
 
   // footer sec 2 mid wrapper
   footerMiddle: {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
-    width: '100%',
+    [mq.customMax(768)]: {
+      gridRow: '3',
+      gridColumn: 'span 2',
+    },
   },
 
   footerMiddleLower: {
+    
     h6: {
       color: colors.lightBlue,
       paddingBlock: 0,
       marginBlock: 0,
-      letterSpacing: '0.08em',
+      letterSpacing: '0.065em',
       fontWeight: 200,
-      fontSize: 'clamp(14px, 1.5vw, 15px)',
+      fontSize: 'clamp(14px, 1.15vw, 15px)',
       fontFamily: '"Poppins", sans-serif',
     },
   },
 
   //footer sec 3 right wrapper
   footerRight: {
-    flexBasis: '25%',
-    maxWidth: '25%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
@@ -82,12 +99,20 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
       maxWidth: '400px',
       width: '90%',
     },
+    [mq.customMax(768)]: {
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+      paddingBottom: 'min(1em, 2vw)',
+      gridRow: '2',
+      gridColumn: '2',
+      paddingRight: '1vw',
+    },
   },
 
   // simplified hover for logo in footer
   footerLogoLink: {
-    width: '70%',
-    maxWidth: '200px',
+    width: '60%',
+    maxWidth: '170px',
     overflow: 'hidden',
 
     svg: {
@@ -154,45 +179,63 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
         },
       },
     },
+    [mq.customMax(768)]: {
+      width: '85%',
+      maxWidth: '320px',
+      paddingBlock: 'min(0.75em, 1.5vw)',
+    },
   },
 
+  // item 1
   footerLinksWrapper: {
     width: '100%',
-    height: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    columnGap: '2%',
     alignItems: 'center',
+    [mq.customMax(768)]: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gridRow: 'span 2',
+      gridColumns: '1 / 2',
+      
+    },
   },
 
   footerMenuItem: {
     fontFamily: '"Poppins", sans-serif',
-    fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
+    fontSize: '1.25rem',
     fontWeight: 500,
     color: colors.lightBlue,
     textDecoration: 'none',
-    padding: '1em',
-
+    padding: 'min(1em, 1vw)',
     '&:hover': {
       color: colors.white,
+    },
+
+    [mq.customMax(768)]: {
+      fontSize: 'clamp(1.125rem, 3.5vw, 1.3rem)',
+      padding: '0.3em',
     },
   },
 
   socialMediaRow: {
+    
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBlock: 0,
-    width: '100%',
+    width: '90%',
     marginInline: 'auto',
+    paddingBottom: '6px',
     a: {
-      flexBasis: '20%',
-      maxWidth: '20%',
+      width: '20%',
       svg: {
         display: 'block',
         width: '100%',
         height: 'auto',
-        maxHeight: '32px',
+        maxHeight: '34px',
         stroke: colors.white,
       },
 
@@ -201,6 +244,12 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
           stroke: colors.red,
         },
       },
+    },
+    [mq.customMax(768)]: {
+      width: '100%',
+
+      paddingTop: 'min(1em, calc(1vw + 1vh))',
+      
     },
   },
 }));
