@@ -48,7 +48,7 @@ export const usePlaylistStyles = createStyles(() => ({
 
     // SIDEWAYS TEXT
     h2: {
-      opacity: 0.7,
+      opacity: 1,
       position: 'absolute',
       left: 0,
       zIndex: 0,
@@ -75,7 +75,6 @@ export const usePlaylistStyles = createStyles(() => ({
                   0 0 70px ${chroma(colors.neonPink).brighten(9).hex()}
                 `,
         color: chroma(colors.neonPink).brighten(7).hex(),
-        
       },
       '&.sidewaysText1': {
         textShadow: `
@@ -104,6 +103,7 @@ export const usePlaylistStyles = createStyles(() => ({
       `,
       },
     },
+
     h4: {
       color: chroma(colors.mustard).alpha(0.6).hex(),
       fontFamily: '"Oswald", sans-serif',
@@ -114,46 +114,68 @@ export const usePlaylistStyles = createStyles(() => ({
       lineHeight: '1em',
     },
 
-    [mq.customMax(991)]: {
-      marginRight: '-3vw',
-      marginLeft: '1vw',
-    },
-
     [mq.customMax(767)]: {
-      marginRight: '0',
+      marginRight: 0,
+      rowGap: 'min(4em, 8vw)',
+      h2: {
+        fontSize: 'clamp(6rem, 20vw, 7.5rem)',
+      },
     },
 
     [mq.customMax(575)]: {
-
-      paddingLeft: '5vw',
+      h2: {
+        left: 'min(3vw, 50px)',
+      },
       h4: {
         fontSize: 'clamp(2rem, 8vw, 3.5rem)',
       },
       p: {
-        fontSize: 'clamp(1.125rem, 4vw, 1.5rem)',
+        fontSize: '1.25rem',
       },
     },
   },
 
   playlistGridCol: {
     position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    gap: '1em',
-
-    // BAND/ARTIST NAMES
-    p: {
-      marginLeft: 'min(2.75rem, calc(2.25vw + 1rem))',
-      position: 'relative',
-      mixBlendMode: 'luminosity',
-      color: colors.white,
-      fontFamily: '"Poppins", sans-serif',
-      fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
-      fontWeight: 500,
-      marginBlock: 0,
-      lineHeight: '1.15em',
+    textAlign: 'center', // center list trick
+    ul: {
+      display: 'inline-block', // center list trick
+      textAlign: 'left', // center list trick
+      // ------- BAND/ARTIST NAMES ------- //
+      li: {
+        // marginLeft: 'min(2.75rem, calc(2.25vw + 1rem))',
+        position: 'relative',
+        mixBlendMode: 'luminosity',
+        color: colors.white,
+        fontFamily: '"Poppins", sans-serif',
+        fontSize: '1.25em',
+        fontWeight: 500,
+        marginBlock: 0,
+        lineHeight: '1.15em',
+      },
+    },
+    [mq.customMax(991)]: {
+      marginInline: 'auto',
+      ul: {
+        li: {
+          fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+        },
+      },
+    },
+    [mq.customMax(768)]: {
+      marginInline: 'auto',
+      ul: {
+        textWrap: 'balance',
+        li: {
+          fontSize: 'clamp(1.25em, 4vw, 1.5em)',
+        },
+      },
+    },
+    [mq.customMax(575)]: {
+      ul: {
+        width: '240px',
+        marginLeft: '78px',
+      },
     },
   },
 

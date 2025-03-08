@@ -1,5 +1,5 @@
 import { usePlaylistStyles, useGlobalStyles, PageHelmet, playlistData } from '@junkfm';
-import { Box, Grid, Text, Title } from '@mantine/core';
+import { Box, Grid, List, Text, Title } from '@mantine/core';
 
 export function Playlist() {
   const { classes, cx } = usePlaylistStyles();
@@ -30,27 +30,30 @@ export function Playlist() {
             to...whose songs you'll never wanna hear the same way again.
           </Text>
         </Box>
-        <Grid className={classes.playlistGridWrapper} id="playlist-wrapper" pb="min(7rem, calc(5vh + 4vw))">
+        <Grid
+          className={classes.playlistGridWrapper}
+          id="playlist-wrapper"
+          pb="min(7rem, calc(5vh + 4vw))"
+        >
           {playlistData.map((section, index) => (
             <Grid.Col
               className={cx(classes.playlistGridCol, `col${index}`)}
-              span={11}
-              xs={4}
+              span={12}
+              xs={5}
               sm={4}
-              md={4}
-              lg={3.75}
+              lg={3.5}
               key={section.decade}
-              
             >
-              <Title className={`sidewaysText${index}`} order={2}>{section.sidewaysText}</Title>
-
-              {section.artists.map((artist) => (
-                <Text component="p" key={artist}
-                  className={globalClasses.textContrastShadowHeavy}
-                >
-                  {artist}
-                </Text>
-              ))}
+              <Title className={`sidewaysText${index}`} order={2}>
+                {section.sidewaysText}
+              </Title>
+              <List spacing="1em" listStyleType="none">
+                {section.artists.map((artist) => (
+                  <List.Item key={artist} className={globalClasses.textContrastShadowHeavy}>
+                    {artist}
+                  </List.Item>
+                ))}
+              </List>
             </Grid.Col>
           ))}
         </Grid>
