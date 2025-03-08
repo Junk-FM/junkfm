@@ -12,6 +12,7 @@ import {
   IconBrandInstagram,
   IconBrandTwitter,
   IconBrandYoutube,
+  IconBrandTiktok,
 } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import timeGif from '../../assets/gifs/time-animated.gif';
@@ -22,7 +23,7 @@ export function Footer() {
   const { classes: globalClasses } = useGlobalStyles();
 
   return (
-    <Box className={cx(classes.footerOutermostWrapper)}>
+    <Box component="footer" id="footer" className={cx(classes.footerOutermostWrapper)}>
       <Box className={cx(globalClasses.responsiveRow, classes.footerInnerWrapper)}>
         <Box className={classes.footerLeft}>
           <Link to="/" className={classes.footerLogoLink}>
@@ -45,6 +46,9 @@ export function Footer() {
               </Anchor>
               <Anchor href="https://www.instagram.com/junkfm/" target="_blank" rel="noreferrer">
                 <IconBrandInstagram />
+              </Anchor>
+              <Anchor href="https://www.tiktok.com/@junkfm" target="_blank" rel="noreferrer">
+                <IconBrandTiktok />
               </Anchor>
               <Anchor href="https://x.com/RockJunkFM" target="_blank" rel="noreferrer">
                 <IconBrandTwitter />

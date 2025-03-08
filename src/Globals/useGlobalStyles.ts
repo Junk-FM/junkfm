@@ -136,12 +136,14 @@ export const useGlobalStyles = createStyles(() => ({
 
   bodyWrapper: {
     background: colors.black,
+    display: 'flex',
+    flexDirection: 'column',
     minHeight: '100dvh',
     width: '100dvw',
     fontFamily: '"Poppins", sans-serif',
     overflow: 'hidden',
     position: 'relative',
-    flexDirection: 'row',
+
     h1: {
       fontFamily: '"Oswald", sans-serif',
       fontSize: 'clamp(4rem, 8vw, 5rem)',
@@ -178,6 +180,11 @@ export const useGlobalStyles = createStyles(() => ({
       fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
       fontWeight: 400,
     },
+  },
+
+  // app level wrapper of all components for footer bottom positioning etc
+  routesWrapper: {
+    flex: 1,
   },
 
   // ---------------------------------------- //

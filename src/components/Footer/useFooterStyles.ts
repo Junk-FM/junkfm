@@ -183,7 +183,7 @@ export const useFooterStyles = createStyles((_, { isMobile }: FooterStylesProps)
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBlock: 0,
-    width: '70%',
+    width: '100%',
     marginInline: 'auto',
     a: {
       flexBasis: '20%',

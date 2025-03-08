@@ -8,12 +8,14 @@ function App() {
   return (
     <Box className={globalClasses.bodyWrapper} id="outermost-wrapper">
       <Menu />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/playlist" element={<Playlist />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Box id="routes-wrapper" className={globalClasses.routesWrapper}>
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/playlist" element={<Playlist />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Box>
       <Footer />
     </Box>
   );

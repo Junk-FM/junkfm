@@ -6,9 +6,7 @@ export const useContactStyles = createStyles(() => ({
   contactOutermostWrapper: {
     position: 'relative',
     background: sectionBackgrounds.contact,
-    minHeight: '100vh',
     h1: {
-
       textAlign: 'center',
       paddingBlock: '0.15em 0.4em',
       WebkitTextStroke: `0.026em ${colors.white}`,
