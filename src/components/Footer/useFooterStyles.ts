@@ -37,16 +37,16 @@ export const useFooterStyles = createStyles(() => ({
     },
     [mq.customMax(768)]: {
       display: 'grid', // idea
-      gridTemplateColumns: '1fr 2fr',
-      gridTemplateRows: '2fr 1fr 1fr',
+      gridTemplateColumns: '1fr 2.5fr',
+      gridTemplateRows: '1.8fr 1fr 1fr',
       alignItems: 'start',
-      
+
       marginInline: 'auto',
       paddingBottom: 'min(1em, calc(0.5vw + 0.5vh))',
       paddingInline: '6vw',
     },
     [mq.customMax(575)]: {
-      gridTemplateColumns: '1fr 3fr',
+      gridTemplateRows: '1.25fr 0.75fr 1fr',
       paddingInline: '3vw',
     },
   },
@@ -60,7 +60,7 @@ export const useFooterStyles = createStyles(() => ({
       alignItems: 'flex-start',
       gridRow: '1',
       gridColumn: '2',
-      paddingRight: '1vw',
+      paddingRight: '2vw',
     },
   },
 
@@ -77,15 +77,28 @@ export const useFooterStyles = createStyles(() => ({
   },
 
   footerMiddleLower: {
-    
     h6: {
       color: colors.lightBlue,
       paddingBlock: 0,
       marginBlock: 0,
       letterSpacing: '0.065em',
       fontWeight: 200,
-      fontSize: 'clamp(14px, 1.15vw, 15px)',
+      fontSize: '15px',
       fontFamily: '"Poppins", sans-serif',
+      textWrap: 'balance',
+    },
+    [mq.customMax(480)]: {
+      h6: {
+        span: {
+          '&:first-of-type, &:last-of-type': {
+            width: '100%',
+            display: 'block',
+          },
+          '&:nth-of-type(2)': {
+            display: 'none',
+          },
+        },
+      },
     },
   },
 
@@ -105,7 +118,7 @@ export const useFooterStyles = createStyles(() => ({
       paddingBottom: 'min(1em, 2vw)',
       gridRow: '2',
       gridColumn: '2',
-      paddingRight: '1vw',
+      paddingRight: '2vw',
     },
   },
 
@@ -199,7 +212,6 @@ export const useFooterStyles = createStyles(() => ({
       alignItems: 'flex-start',
       gridRow: 'span 2',
       gridColumns: '1 / 2',
-      
     },
   },
 
@@ -215,13 +227,12 @@ export const useFooterStyles = createStyles(() => ({
     },
 
     [mq.customMax(768)]: {
-      fontSize: 'clamp(1.125rem, 3.5vw, 1.3rem)',
-      padding: '0.3em',
+      fontSize: 'clamp(1.125rem, 3.75vw, 1.3rem)',
+      padding: '0.25em',
     },
   },
 
   socialMediaRow: {
-    
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -246,10 +257,16 @@ export const useFooterStyles = createStyles(() => ({
       },
     },
     [mq.customMax(768)]: {
-      width: '100%',
-
       paddingTop: 'min(1em, calc(1vw + 1vh))',
-      
+      a: {
+        width: '15%',
+        svg: {
+          maxHeight: '28px',
+        },
+      },
+    },
+    [mq.customMax(575)]: {
+      width: '100%',
     },
   },
 }));
