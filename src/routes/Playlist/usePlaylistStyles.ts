@@ -10,7 +10,7 @@ export const usePlaylistStyles = createStyles(() => ({
       textAlign: 'left',
       fontWeight: 700,
       WebkitTextStroke: `0.026em ${colors.white}`,
-      marginBlock: '0.25 0',
+      
     },
   },
 

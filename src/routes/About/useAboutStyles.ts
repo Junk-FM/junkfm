@@ -6,11 +6,11 @@ export const useAboutStyles = createStyles(() => ({
     backgroundColor: sectionBackgrounds.about,
     textAlign: 'center',
     textWrap: 'pretty',
-    minHeight: '100vh',
+    minHeight: 'calc(100vh - 200px)',
     h1: {
       color: colors.black,
       WebkitTextStroke: `0.026em ${colors.almostWhite}`,
-      paddingBlock: '1rem',
+
     },
     h5: {
       color: colors.black,

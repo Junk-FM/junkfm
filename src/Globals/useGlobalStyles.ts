@@ -1,5 +1,5 @@
 import { createStyles, MantineThemeOverride } from '@mantine/core';
-import chroma from 'chroma-js';
+// import chroma from 'chroma-js';
 
 const BREAKPOINT_TOUCH = 900;
 
@@ -55,7 +55,7 @@ export const colors = {
 export const sectionBackgrounds = {
   menu: colors.black, // route built
   hero: colors.black, // route built
-  playlist: chroma(colors.black).darken(0.2).hex(),
+  playlist: colors.black, // route built
   schedule: colors.pink, // route built
   contact: colors.darkBlue, // route built
   about: colors.mediumGreen, // route built
@@ -149,6 +149,7 @@ export const useGlobalStyles = createStyles(() => ({
       fontSize: 'clamp(4rem, 8vw, 5rem)',
       fontWeight: 700,
       textTransform: 'uppercase',
+      paddingBlock: '1rem',
     },
     h2: {
       fontFamily: '"Oswald", sans-serif',

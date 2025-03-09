@@ -18,3 +18,23 @@ import { useMediaQuery } from '@mantine/hooks';
  * ```
  */
 export const useIsMobile = () => useMediaQuery('(max-width: 900px)');
+
+
+/**
+ * useIsPhone hook
+ * 
+ * @description Returns true if the screen width is
+ * under 576px (associated with the below XS breakpoint)
+ * via Mantine's useMediaQuery hook
+ * 
+ * @author Chris "Mo" Mochinski <mo@wreckshopmedia.com>
+ * 
+ * @returns {boolean} useIsPhone
+ * 
+ * @example
+ * ```tsx
+ * const isPhone = useIsPhone();
+ * console.log(isPhone); // true or false
+ * ```
+ */
+export const useIsPhone = () => useMediaQuery('(max-width: 576px)');

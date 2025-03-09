@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core';
-import { colors } from '@junkfm';
+import { colors, mq } from '@junkfm';
 import chroma from 'chroma-js';
 
 export const useMenuMobileStyles = createStyles(() => ({
@@ -9,6 +9,7 @@ export const useMenuMobileStyles = createStyles(() => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
 
   hamburger: {
@@ -24,6 +25,12 @@ export const useMenuMobileStyles = createStyles(() => ({
     },
 
     //REVISIT //TODO FOCUS STUFF
+  },
+
+  mobileDrawer: {
+    '& .mantine-Paper-root': {
+      background: colors.almostWhite,
+    },
   },
 
   mobileMenuContainerOuter: {
@@ -71,35 +78,73 @@ export const useMenuMobileStyles = createStyles(() => ({
     },
   },
 
+  // simplified hover for logo in footer
   mobileMenuLogoLink: {
+    width: '60%',
+    maxWidth: '170px',
+    overflow: 'hidden',
+
     svg: {
-      transformOrigin: 'center',
-      transformBox: 'fill-box',
-      transform: 'scale(1)',
-      transition: `transform 120ms ease-out`,
-      rect: {
-        transition: `fill 120ms ease-out`,
-      },
+      transition: 'all 180ms ease',
+      borderRadius: '0px',
+      display: 'block', // remove weird bottom space
       '& #letters': {
-        '& path': {
-          transition: `fill 120ms ease-out, stroke 120ms ease-out`,
+        transformBox: 'fill-box',
+        transformOrigin: 'center center',
+        transition: 'all 180ms ease',
+      },
+      rect: {
+        transformBox: 'fill-box',
+        fill: chroma(colors.red).alpha(1).hex(),
+        stroke: colors.red,
+        '&#bottom-line': {
+          fill: chroma(colors.red).alpha(1).hex(),
+          transform: 'scaleY(1)',
+          transformOrigin: 'center bottom',
+          transition: 'transform 260ms ease',
+        },
+        '&#top-line': {
+          fill: chroma(colors.red).alpha(1).hex(),
+          transformOrigin: 'center bottom',
+          transformBox: 'fill-box',
+          transform: 'scaleY(1)',
+          transition: 'all 200ms ease',
         },
       },
     },
+    // -------- HOVER FOOTER LOGO -------- /
     '&:hover': {
       svg: {
-        transition: `transform 180ms ease-out`,
-        transform: 'scale(1.01)',
-        rect: {
-          fill: chroma(colors.red).darken(1).hex(),
-        },
+        borderRadius: '8px',
         '& #letters': {
-          '& path': {
-            fill: chroma(colors.black).brighten(0.85).hex(),
-            stroke: chroma(colors.black).brighten(0.85).hex(),
+          transform: 'scale(0.9)',
+          '& > g[id*="letter"]': {
+            path: {
+            
+              '&:last-of-type': {
+                stroke: colors.white,
+                strokeWidth: '1%',
+              },
+            },
+          },
+        },
+        rect: {
+          fill: chroma(colors.red).alpha(1).hex(),
+          '&#bottom-line': {
+            fill: chroma(colors.red).alpha(1).hex(),
+            transform: 'scaleY(11)',
+          },
+          '&#top-line': {
+            fill: chroma(colors.red).alpha(0).hex(),
+            transform: 'scaleY(0)',
           },
         },
       },
+    },
+    [mq.customMax(768)]: {
+      width: '85%',
+      maxWidth: '320px',
+      paddingBlock: 'min(0.75em, 1.5vw)',
     },
   },
 }));

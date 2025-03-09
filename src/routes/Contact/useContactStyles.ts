@@ -5,10 +5,11 @@ import chroma from 'chroma-js';
 export const useContactStyles = createStyles(() => ({
   contactOutermostWrapper: {
     position: 'relative',
+    height: 'calc(100dvh - 200px)',
     background: sectionBackgrounds.contact,
     h1: {
       textAlign: 'center',
-      paddingBlock: '0.15em 0.4em',
+      
       WebkitTextStroke: `0.026em ${colors.white}`,
     },
   },

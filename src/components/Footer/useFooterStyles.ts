@@ -18,7 +18,7 @@ export const useFooterStyles = createStyles(() => ({
     justifyContent: 'center',
     alignItems: 'flex-end',
     zIndex: 100,
-    boxShadow: `0 -15px 30px ${chroma(colors.lightBlue).alpha(0.8).hex()}`,
+    boxShadow: `0 -5px 14px ${chroma(colors.black).alpha(0.8).hex()}`,
   },
 
   // flex row - full width of footer

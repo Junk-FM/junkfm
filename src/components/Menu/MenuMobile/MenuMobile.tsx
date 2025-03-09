@@ -2,9 +2,10 @@ import { useDisclosure } from '@mantine/hooks';
 import { Box, Drawer, Text } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
-import { colors, JunkFmLogo, CommonButton, useMenuMobileStyles, MenuProps } from '@junkfm';
+import { useIsPhone, colors, JunkFmLogo, CommonButton, useMenuMobileStyles, MenuProps } from '@junkfm';
 
 export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
+  const isPhone = useIsPhone();
   const [opened, { open, close }] = useDisclosure(false);
   const { classes, cx } = useMenuMobileStyles();
 
@@ -26,14 +27,14 @@ export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
       </Box>
 
       <Drawer
+      className={classes.mobileDrawer}
         id="mobile-menu-drawer"
         opened={opened}
         onClose={close}
         overlayProps={{ opacity: 0.5, blur: 3 }}
         position="right"
-        size="clamp(300px, 83dvw, 380px)"
+        size= {isPhone ? 'clamp(200px, calc(60dvw + 30dvh), 280px)' : 'md'}
         withCloseButton={false}
-        padding="2rem"
         transitionProps={{ transition: 'rotate-left', duration: 150, timingFunction: 'ease-out' }}
       >
         <Box className={classes.mobileMenuContainerOuter}>
