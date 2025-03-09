@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Box } from '@mantine/core';
 import { useGlobalStyles, Menu, Footer } from '@junkfm';
-import { Hero, Playlist, Schedule, Contact } from './routes';
+import { Hero, Playlist, Schedule, Contact, About } from './routes';
 
 function App() {
   const { classes: globalClasses } = useGlobalStyles();
@@ -14,6 +14,7 @@ function App() {
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Box>
       <Footer />

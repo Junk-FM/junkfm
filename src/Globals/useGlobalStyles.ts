@@ -55,10 +55,10 @@ export const colors = {
 export const sectionBackgrounds = {
   menu: colors.black, // route built
   hero: colors.black, // route built
-  about: colors.darkBlue,
   playlist: chroma(colors.black).darken(0.2).hex(),
   schedule: colors.pink, // route built
   contact: colors.darkBlue, // route built
+  about: colors.mediumGreen, // route built
   media: colors.lightBlue,
 };
 

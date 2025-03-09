@@ -7,7 +7,7 @@ export type MenuItem = {
 };
 
 export const menuItems: MenuItem[] = [
-  { title: 'About', link: '/about', neonColor: colors.neonLightBlue },
+  { title: 'About', link: '/about', neonColor: colors.neonGreen },
   { title: 'Playlist', link: '/playlist', neonColor: colors.neonYellow },
   { title: 'Schedule', link: '/schedule', neonColor: colors.neonPink },
   { title: 'Contact', link: '/contact', neonColor: colors.neonBlue }, // revisit neonGreen instead??
