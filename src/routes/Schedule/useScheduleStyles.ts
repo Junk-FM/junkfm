@@ -10,11 +10,11 @@ export const useScheduleStyles = createStyles(() => ({
       WebkitTextStroke: `0.026em ${colors.yellow}`,
       marginBottom: 0,
     },
-    h2: {
+    p: {
       fontFamily: '"Poppins", sans-serif',
-      fontSize: 'clamp(1.25rem, 4vw, 2rem)',
+      fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
       fontWeight: 500,
-      color: colors.trueBlack,
+      color: colors.yellow,
       paddingBottom: '1rem',
       marginBlock: 0,
     },
@@ -30,62 +30,78 @@ export const useScheduleStyles = createStyles(() => ({
 
   showsListBox: {
     width: '100%',
-    display: 'flex',  
+    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    // SIDEWAYS DAY OF WEEK
     h2: {
       fontFamily: '"Poppins", sans-serif !important',
       fontSize: '4.5rem',
-      // letterSpacing: '0.03em',
-      // transform: 'scaleX(1.1)',
-      fontWeight: 800,
-      lineHeight: 0.7,
+      fontWeight: 900,
+      lineHeight: 0.8,
       textAlign: 'center',
       textTransform: 'uppercase',
       marginBlock: 0,
       writingMode: 'sideways-lr',
       textOrientation: 'upright',
       paddingBottom: 0,
+      letterSpacing: '-0.035em',
+      color: colors.black,
+      WebkitTextStroke: `0.04em ${colors.yellow}`,
     },
+    // SIDEWAYS DATE
     h3: {
       fontFamily: '"Oswald", sans-serif !important',
       fontSize: '3.25rem',
       letterSpacing: '-0.035em',
       transform: 'scaleX(1.1)',
       fontWeight: 800,
-      lineHeight: 0.8,
+      lineHeight: 0.9,
       textAlign: 'center',
       marginBlock: 0,
       writingMode: 'sideways-lr',
       textOrientation: 'upright',
+      span: {
+        fontFamily: '"Poppins", sans-serif',
+        color: chroma(colors.red).alpha(0.7).css(),
+        fontWeight: 500,
+        lineHeight: 'inherit',
+        fontSize: 'inherit',
+      },
     },
+    // VENUE
     h4: {
       lineHeight: '1em',
-      fontSize: '2.25rem',
-      fontWeight: 600,
+      fontSize: '2.125rem',
+      fontWeight: 700,
       marginBlock: 0,
     },
+    // CITY, STATE
     h5: {
       lineHeight: '1em',
-      fontSize: '1.5rem',
+      fontSize: '1.75rem',
       fontWeight: 500,
       marginBlock: 0,
     },
+    // ADDRESS
     h6: {
       marginBlock: 0,
-      fontWeight: 500,
+      fontWeight: 400,
       lineHeight: '1em',
-      fontSize: '1.35rem',
+      fontSize: '1.25rem',
+      color: colors.red,
     },
+    // DATE LONG FORMAT
     p: {
       marginBlock: 0,
       lineHeight: '1',
-      fontSize: '1.15rem',
+      fontSize: '1.35rem',
+      color: colors.black,
+      padding: 0,
     },
   },
 
   singleShowRowWrapper: {
-    
     border: `0.5em outset ${colors.yellow}40`,
     borderRadius: '0.4em',
     background: chroma(colors.pink).alpha(0.9).brighten(0.2).css(),
@@ -100,7 +116,7 @@ export const useScheduleStyles = createStyles(() => ({
   },
 
   showInnerDetailsWrapper: {
-    paddingLeft: '1em',
+    paddingLeft: '0.5em',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

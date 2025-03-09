@@ -25,7 +25,19 @@ export function Schedule() {
     const day = date.getDate();
     const year = date.getFullYear().toString().slice(-2); // Get last 2 digits
 
-    return `${month}.${day}.${year}`;
+    return (
+      <>
+        {month}
+        <Text component="span">
+          .
+        </Text>
+        {day}
+        <Text component="span">
+          .
+        </Text>
+        {year}
+      </>
+    );
   };
 
   console.log('SHOW LIST!', upcomingShows);
@@ -41,7 +53,7 @@ export function Schedule() {
       pb="min(6rem, calc(5vh + 4vw))"
     >
       <Title order={1}>Schedule</Title>
-      <Title order={2}>We'll see you soon. Right? RIGHT??</Title>
+      <Text component="p">We'll see you soon. Right? RIGHT??</Text>
 
       <Box className={classes.scheduleBoxWrapper}>
         {/* IF DATA IS LOADING ⌛ */}
@@ -88,10 +100,12 @@ export function Schedule() {
 
                   <Box className={classes.showInnerDetailsWrapper}>
                     <Title order={4}>{show.venue.name}</Title>
-                    <Text component="h5">
-                      {show.venue.city}, {show.venue.region}
-                    </Text>
-                    <Text component="h6">{show.venue.street_address}</Text>
+                    <Box>
+                      <Text component="h5">
+                        {show.venue.city}, {show.venue.region}
+                      </Text>
+                      <Text component="h6">{show.venue.street_address}</Text>
+                    </Box>
                     <Text component="p">{formatDatetime(show.datetime)}</Text>
                   </Box>
                 </Flex>
