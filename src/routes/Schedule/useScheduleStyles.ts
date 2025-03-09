@@ -1,5 +1,6 @@
 import { createStyles } from '@mantine/core';
 import { sectionBackgrounds, colors } from '@junkfm';
+import chroma from 'chroma-js';
 
 export const useScheduleStyles = createStyles(() => ({
   scheduleOutermostWrapper: {
@@ -26,29 +27,87 @@ export const useScheduleStyles = createStyles(() => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
+
   showsListBox: {
     width: '100%',
+    display: 'flex',  
+    flexDirection: 'column',
+    justifyContent: 'center',
+    h2: {
+      fontFamily: '"Poppins", sans-serif !important',
+      fontSize: '4.5rem',
+      // letterSpacing: '0.03em',
+      // transform: 'scaleX(1.1)',
+      fontWeight: 800,
+      lineHeight: 0.7,
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      marginBlock: 0,
+      writingMode: 'sideways-lr',
+      textOrientation: 'upright',
+      paddingBottom: 0,
+    },
     h3: {
-      marginBlock: '0.2em',
-      fontSize: 'clamp(1.25em, 2vw, 1.5em)',
+      fontFamily: '"Oswald", sans-serif !important',
+      fontSize: '3.25rem',
+      letterSpacing: '-0.035em',
+      transform: 'scaleX(1.1)',
+      fontWeight: 800,
+      lineHeight: 0.8,
+      textAlign: 'center',
+      marginBlock: 0,
+      writingMode: 'sideways-lr',
+      textOrientation: 'upright',
     },
     h4: {
-      marginBlock: '0.2em',
-      fontSize: 'clamp(1em, 1.5vw, 1.25em)',
+      lineHeight: '1em',
+      fontSize: '2.25rem',
+      fontWeight: 600,
+      marginBlock: 0,
     },
     h5: {
-      marginBlock: '0.2em',
-      fontSize: 'clamp(0.85em, 1.25vw, 1em)',
+      lineHeight: '1em',
+      fontSize: '1.5rem',
+      fontWeight: 500,
+      marginBlock: 0,
+    },
+    h6: {
+      marginBlock: 0,
+      fontWeight: 500,
+      lineHeight: '1em',
+      fontSize: '1.35rem',
     },
     p: {
-      marginBlock: '0.2em',
-      fontSize: 'clamp(0.75em, 1vw, 0.85em)',
+      marginBlock: 0,
+      lineHeight: '1',
+      fontSize: '1.15rem',
     },
-
   },
 
-  errorBox: {
+  singleShowRowWrapper: {
+    
+    border: `0.5em outset ${colors.yellow}40`,
+    borderRadius: '0.4em',
+    background: chroma(colors.pink).alpha(0.9).brighten(0.2).css(),
+    marginBlock: '1em',
+  },
+
+  showContainer: {
+    containerType: 'inline-size',
+    height: '100%',
+    width: '100%',
+    padding: '0.75em 1.25em',
+  },
+
+  showInnerDetailsWrapper: {
+    paddingLeft: '1em',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+
+  loadingErrorBox: {
     textWrap: 'balance',
     h3: {
       fontWeight: 600,
@@ -66,12 +125,6 @@ export const useScheduleStyles = createStyles(() => ({
       color: colors.almostWhite,
       marginBlock: '0.4em',
       fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
-    },
-  },
-  loadingErrorBox: {
-    h4: {
-      fontWeight: 600,
-      fontSize: 'clamp(1.25em, 2vw, 1.5em)',
     },
   },
 }));
