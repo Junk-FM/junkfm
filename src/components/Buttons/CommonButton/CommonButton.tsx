@@ -9,6 +9,7 @@ export interface CommonButtonProps {
   buttonText?: string;
   buttonSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   buttonVariant?: 'filled' | 'outline';
+  onClick?: () => void;
 }
 
 export function CommonButton(props: CommonButtonProps) {
@@ -20,6 +21,7 @@ export function CommonButton(props: CommonButtonProps) {
     buttonText = 'Button Text',
     buttonSize = 'md',
     buttonVariant = 'filled',
+    onClick,
   } = props;
   const { classes } = useCommonButtonStyles({
     buttonColor,
@@ -30,7 +32,7 @@ export function CommonButton(props: CommonButtonProps) {
     buttonVariant,
   });
   return (
-    <Box role="button" className={classes.commonButton}>
+    <Box role="button" className={classes.commonButton} onClick={onClick}>
       {buttonText}
     </Box>
   );
