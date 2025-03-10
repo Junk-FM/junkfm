@@ -40,7 +40,7 @@ export function Schedule() {
     );
   };
 
-  console.log('SHOW LIST!', upcomingShows);
+  console.log('SHOW LIST DATA', upcomingShows);
 
   return (
     <Box

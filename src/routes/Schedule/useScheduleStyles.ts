@@ -56,7 +56,7 @@ export const useScheduleStyles = createStyles(() => ({
       letterSpacing: '-0.035em',
       transform: 'scaleX(1.1)',
       fontWeight: 800,
-      lineHeight: 0.9,
+      lineHeight: 1,
       textAlign: 'center',
       marginBlock: 0,
       writingMode: 'sideways-lr',

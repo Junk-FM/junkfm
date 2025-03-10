@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 const API_BASE_URL = 'https://rest.bandsintown.com/artists';
 const API_KEY = import.meta.env.VITE_BANDSINTOWN_API_KEY;
 
-console.log('api key:', API_KEY);
-
 interface EventData {
   id: string;
   datetime: string;

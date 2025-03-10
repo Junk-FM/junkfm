@@ -11,8 +11,6 @@ export function MenuMobile({ activeRoute, menuItems }: MenuProps) {
 
   const handleHamburgerClick = () => {
     open();
-    // log state of opened
-    console.log('opened:', opened);
   };
 
   return (
