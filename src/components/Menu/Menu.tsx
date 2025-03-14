@@ -3,12 +3,16 @@ import { Box } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { MenuDesktop, MenuMobile, useMenuStyles, menuItems } from '.';
 import { JunkFmHeaderLogo, useIsMobile, colors } from '@junkfm';
-import { useLocation } from 'react-router-dom';
 
-export function Menu() {
+type MenuProps = {
+  activeRoute: string;
+};
+
+
+export function Menu(props: MenuProps) {
+  const { activeRoute } = props;
   const isMobile = useIsMobile();
   const [scrolled, setScrolled] = useState(false);
-  const activeRoute = useLocation().pathname;
   const { classes, cx } = useMenuStyles({ isMobile, activeRoute });
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export function Menu() {
           <JunkFmHeaderLogo height="75%" textColor={colors.white} />
         </Link>
         {isMobile ? (
-          <MenuMobile activeRoute={activeRoute} menuItems={menuItems} /> // REVISIT
+          <MenuMobile activeRoute={activeRoute} menuItems={menuItems} />
         ) : (
           <MenuDesktop activeRoute={activeRoute} menuItems={menuItems} />
         )}

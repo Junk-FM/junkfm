@@ -124,6 +124,10 @@ export const useFooterStyles = createStyles(() => ({
 
   // simplified hover for logo in footer
   footerLogoLink: {
+    '&.activePage': {
+      pointerEvents: 'none',
+      cursor: 'default',
+    },
     width: '60%',
     maxWidth: '170px',
     overflow: 'hidden',
@@ -216,6 +220,11 @@ export const useFooterStyles = createStyles(() => ({
   },
 
   footerMenuItem: {
+    '&.activePage': {
+      pointerEvents: 'none',
+      cursor: 'default',
+      color: colors.almostWhite,
+    },
     fontFamily: '"Poppins", sans-serif',
     fontSize: '1.25rem',
     fontWeight: 500,
@@ -223,7 +232,7 @@ export const useFooterStyles = createStyles(() => ({
     textDecoration: 'none',
     padding: 'min(1em, 1vw)',
     '&:hover': {
-      color: colors.white,
+      color: colors.mustard,
     },
 
     [mq.customMax(768)]: {
