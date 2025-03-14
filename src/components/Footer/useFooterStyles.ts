@@ -256,12 +256,16 @@ export const useFooterStyles = createStyles(() => ({
         width: '100%',
         height: 'auto',
         maxHeight: '34px',
-        stroke: colors.white,
+        stroke: colors.almostWhite,
+        transformOrigin: '50% 100%',
+        transformBox: 'fill-box',
+        transition: 'all 180ms ease',
       },
 
       '&:hover': {
         svg: {
-          stroke: colors.red,
+          stroke: colors.mustard,
+          transform: 'scale(1.175)',
         },
       },
     },
