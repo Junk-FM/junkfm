@@ -8,7 +8,7 @@ export const useMediaStyles = createStyles(() => ({
   },
 
   mediaHeaderWrapper: {
-    maxWidth: '700px',
+    maxWidth: '800px',
     marginInline: 'auto',
     textWrap: 'balance',
     textAlign: 'center',
@@ -26,8 +26,9 @@ export const useMediaStyles = createStyles(() => ({
       fontWeight: 500,
       fontSize: 'clamp(1.5rem, 2.25vw, 1.75rem)',
     },
-    p: {
-      marginBlock: '0.25em',
+    
+    '& p, & p span': {
+      marginBlock: '0.5em',
       fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
       lineHeight: '1.3em',
       fontWeight: 400,

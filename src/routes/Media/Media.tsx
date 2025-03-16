@@ -17,11 +17,14 @@ export function Media() {
     >
       <Box className={classes.mediaHeaderWrapper}>
         <Title order={1}>Media</Title>
-        <Text component="h4">This is the tip of the iceberg.</Text>
+        <Text component="h4">Be advised...this is the tip of the iceberg.</Text>
         <Text component="p">
-          We'd recommend digging yourself into a Junk FM video content rabbit hole. There is some
-          STUFF out there. Have you seen our 2015 "promo idea" that didn't quite get off the ground?
-          How about our pre-show routine? Grant's first White Castle experience?
+          Seriously. Dig yourself into a Junk FM video rabbit hole. There is some{' '}
+          <Text component="span" italic>
+            stuff
+          </Text>{' '}
+          out there. Have you seen our 2016 "promo idea" that didn't quite get off the ground? How
+          about our "Afternoon Delight" sessions? Grant's first White Castle experience?
         </Text>
       </Box>
       <Grid className={classes.mediaGridWrapper}>
