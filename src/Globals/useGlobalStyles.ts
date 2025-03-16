@@ -59,7 +59,7 @@ export const sectionBackgrounds = {
   schedule: colors.pink, // route built
   contact: colors.darkBlue, // route built
   about: colors.mediumGreen, // route built
-  media: colors.lightBlue,
+  media: colors.lightBlue, // route built
 };
 
 // ------------------------------------------ //
@@ -223,6 +223,10 @@ export const useGlobalStyles = createStyles(() => ({
     },
   },
 
+  pageBottomPadding: {
+    paddingBottom: 'min(6rem, calc(5vh + 4vw))',
+  },
+
   // outermost component all routes - compensate for menu
   // and height jives with footer for short content
   routeTopMenuPadding: {
@@ -255,6 +259,13 @@ export const useGlobalStyles = createStyles(() => ({
 
   textContrastShadowHeavy: {
     textShadow: `3px 2px 5px ${colors.black}70, -5px -2px 5px ${colors.black}70, 3px -2px 5px ${colors.black}70, -5px 2px 5px ${colors.black}70`,
+  },
+
+  mediaFrame: {
+    borderRadius: 'clamp(8px, 3vw, 20px)',
+    aspectRatio: '16 / 9',
+    border: `clamp(6px, 1.35vw, 8px) solid ${colors.almostWhite}`,
+    boxShadow: `1px 2px 16px 6px ${colors.black}40`,
   },
 
   // ----------------------------------------- //

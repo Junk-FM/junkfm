@@ -46,11 +46,11 @@ export function Schedule() {
     <Box
       className={cx(
         globalClasses.responsiveRow,
+        globalClasses.pageBottomPadding,
         globalClasses.routeTopMenuPadding,
         classes.scheduleOutermostWrapper
       )}
       id="schedule"
-      pb="min(6rem, calc(5vh + 4vw))"
     >
       <Title order={1}>Schedule</Title>
       <Text component="p">We'll see you soon. Right? RIGHT??</Text>

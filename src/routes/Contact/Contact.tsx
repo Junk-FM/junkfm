@@ -10,11 +10,12 @@ export function Contact() {
     <Box
       className={cx(
         globalClasses.responsiveRow,
+        globalClasses.pageBottomPadding,
         globalClasses.routeTopMenuPadding,
         classes.contactOutermostWrapper
       )}
       id="contact"
-      pb="min(5rem, calc(3vh + 3vw))"
+
     >
       <Title order={1}>HIT US UP</Title>
       <Box className={classes.formWrapper}>

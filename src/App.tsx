@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Box } from '@mantine/core';
 import { useGlobalStyles, Menu, Footer } from '@junkfm';
-import { Hero, Playlist, Schedule, Contact, About } from './routes';
+import { Hero, Playlist, Schedule, Contact, About, Media } from './routes';
 
 function App() {
   const { classes: globalClasses } = useGlobalStyles();
@@ -17,6 +17,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/media" element={<Media />} />
         </Routes>
       </Box>
       <Footer activeRoute={activeRoute} />
