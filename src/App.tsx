@@ -2,10 +2,16 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Box } from '@mantine/core';
 import { useGlobalStyles, Menu, Footer } from '@junkfm';
 import { Hero, Playlist, Schedule, Contact, About, Media } from './routes';
+import { useEffect } from 'react';
 
 function App() {
   const { classes: globalClasses } = useGlobalStyles();
-  const activeRoute = useLocation().pathname;
+  const { pathname } = useLocation();
+  const activeRoute = pathname;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
 
   return (
     <Box className={globalClasses.bodyWrapper} id="outermost-wrapper">
