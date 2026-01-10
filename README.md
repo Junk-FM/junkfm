@@ -51,7 +51,7 @@ npm run lint     # eslint
 
 ### <span style="color:#FFFD98;">PROJECT STYLE NOTES</span>
 
-- **Fonts:** Google fonts won’t load here, so it falls back to system fonts. Header above is Impact (if you have that onboard), but please stick to Oswald (see global text styles) in lieu of Impact for the sake of originality in this project. Poppins is main body font. Tilt Neon imported and sorta kinda abandoned.
+- **Fonts:** Google fonts won’t load here, so it falls back to system fonts. Header above is Impact (if you have that onboard), but please stick to Oswald (see global text styles) in lieu of Impact for the sake of originality in this project. Poppins is main body font. Tilt Neon used for menu and other "neon sign" effects.
 - **Text styles:** `src/Globals/useGlobalStyles.ts` defines h1–h6 + p sizing/weights. Use those before inventing new ones.
 - **Colors:** Avoid hex - use imports from `src/Globals/useGlobalStyles.ts`
 
