@@ -1,10 +1,10 @@
-# <span style="color:#F092BE; font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; font-weight: 200; letter-spacing: 0.02em;">JUNK FM</span> - 2026 SITE UPDATE
+# <span style="color:#FFFFFB; font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; font-weight: 200; letter-spacing: 0.03em; border-block: 0.2em solid #C42021;line-height: 2em; font-size: clamp(2rem, 8dvw, 3rem);">JUNK FM</span> - 2026 SITE UPDATE
 
 <span style="color:#FFFD98; font-family: 'Poppins', sans-serif;">React</span> + <span style="color:#9D8DF1;">TypeScript</span> + <span style="color:#B7DE95;">Vite</span><br />
 <span style="color:#81A4CD; font-weight:700;">Mantine v6</span> + Emotion + React Router v7<br />
 
 I am a big dumbass giraffe dumptruck poop wagon, but I can still update this list when we add new toys. Please do the same.
-<span style="color:#FFFD98;">✨</span> Also: if you add a library, update this line so Tyler doesn’t think we’ve gone feral.
+<span style="color:#FFFD98;">✨</span> Also: if you add a library, update this line. We are classy around here, dammit.
 
 ## <span style="color:#F68E5F;">BUILD STUFF</span> (NETLIFY MAGIC)
 
@@ -15,7 +15,7 @@ You can work on `main`, but please consider a feature branch (I'll do the same i
 
 ## <span style="color:#6CFF5C;">QUICK START</span> (VITE VROOM VROOM)
 
-**RUN IT:** <span style="color:#FFFD98;">(new friends start here)</span>
+**RUN IT:**
 
 ```bash
 npm install
@@ -27,7 +27,7 @@ If you're in VSCode, you can also use the shortcut:
 1. Hold <span style="color:#F092BE;">`CONTROL + OPTION + COMMAND + r + t`</span> _(opens command palette with the_ <span style="color:#81A4CD;">`🚀Dev`</span> _workflow selected)_
 2. Press <span style="color:#B7DE95;">`ENTER`</span> _(runs the app)_
 
-**STOP IT:** <span style="color:#F092BE;">(a.k.a. stop the chaos)</span>
+**STOP IT:**
 
 1. In VSCode, run <span style="color:#F68E5F;">`CONTROL + OPTION + COMMAND + k`</span> _(kills all pertinent processes)_
 2. Or just <span style="color:#FFFD98;">`COMMAND + c`</span> in the terminal like a normal nerd
@@ -62,6 +62,5 @@ npm run lint     # eslint
 3. Make playlist data editable via a simple external source (JSON, Google Sheets, or something equally lazy).
 4. MORE EASTER EGGS.
 5. Update color scheme globals and eradicate rogue hex usage (imports only).
-6. Scroll behavior: keep position on back/forward, snap to top on new page load.
 
-##### I will add more automation later. Steal at will, but leave snacks.
+##### I will add more automation later. Steal at will, but leave snacks
