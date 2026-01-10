@@ -13,7 +13,7 @@ export function Media() {
         globalClasses.routeTopMenuPadding,
         classes.mediaOutermostWrapper
       )}
-      it="media"
+      id="media"
     >
       <Box className={classes.mediaHeaderWrapper}>
         <Title order={1}>Media</Title>

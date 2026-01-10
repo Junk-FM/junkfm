@@ -7,7 +7,7 @@ export const useScheduleStyles = createStyles(() => ({
     minHeight: 'calc(100vh - 200px)',
     backgroundColor: sectionBackgrounds.schedule,
     h1: {
-      WebkitTextStroke: `0.026em ${colors.yellow}`,
+      WebkitTextStrokeColor: colors.yellow,
       marginBottom: 0,
     },
     p: {

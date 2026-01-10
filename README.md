@@ -1,4 +1,4 @@
-# <span style="color:#FFFFFB; font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; font-weight: 200; letter-spacing: 0.03em; border-block: 0.2em solid #C42021;line-height: 2em; font-size: clamp(2rem, 8dvw, 3rem);">JUNK FM</span> - 2026 SITE UPDATE
+# <span style="color:#FFFFFB; font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; letter-spacing: 0.03em; border-block: 0.2em solid #C42021;line-height: 2em; font-size: clamp(2rem, 8dvw, 3rem);">JUNK FM</span> - 2026 SITE UPDATE
 
 <span style="color:#FFFD98; font-family: 'Poppins', sans-serif;">React</span> + <span style="color:#9D8DF1;">TypeScript</span> + <span style="color:#B7DE95;">Vite</span><br />
 <span style="color:#81A4CD; font-weight:700;">Mantine v6</span> + Emotion + React Router v7<br />
@@ -6,14 +6,14 @@
 I am a big dumbass giraffe dumptruck poop wagon, but I can still update this list when we add new toys. Please do the same.
 <span style="color:#FFFD98;">✨</span> Also: if you add a library, update this line. We are classy around here, dammit.
 
-## <span style="color:#F68E5F;">BUILD STUFF</span> (NETLIFY MAGIC)
+## <span style="color:#F68E5F;">**BUILD STUFF**</span> (NETLIFY MAGIC)
 
 Live preview: <span style="color:#81A4CD;">[junkfm.netlify.app](https://junkfm.netlify.app/)</span><br />
 Main site _(eventually)_: <span style="color:#B7DE95;">[junkfm.com](https://junkfm.com)</span>
 
 You can work on `main`, but please consider a feature branch (I'll do the same if Tyler or other contributors pop up). _💡 Pushing changes to `main` will trigger a Netlify build and update the preview URL after a few minutes._
 
-## <span style="color:#6CFF5C;">QUICK START</span> (VITE VROOM VROOM)
+## <span style="color:#6CFF5C;">**QUICK START**</span> (VITE VROOM VROOM)
 
 **RUN IT:**
 
@@ -32,7 +32,7 @@ If you're in VSCode, you can also use the shortcut:
 1. In VSCode, run <span style="color:#F68E5F;">`CONTROL + OPTION + COMMAND + k`</span> _(kills all pertinent processes)_
 2. Or just <span style="color:#FFFD98;">`COMMAND + c`</span> in the terminal like a normal nerd
 
-## <span style="color:#81A4CD;">SCRIPTS</span> (THE USUAL SUSPECTS)
+## <span style="color:#81A4CD;">**SCRIPTS**</span> (THE USUAL SUSPECTS)
 
 ```bash
 npm run dev      # local dev server
@@ -41,10 +41,11 @@ npm run preview  # preview production build
 npm run lint     # eslint
 ```
 
-## <span style="color:#B7DE95;">BORING CRAP</span> (BUT PLEASE READ ANYWAY)
+## <span style="color:#B7DE95;">**BORING CRAP**</span> (BUT PLEASE READ ANYWAY)
 
 ### <span style="color:#FFFD98;">PROJECT DEV NOTES</span>
 
+- **Bandsintown:** Hit Mo up for a `VITE_BANDSINTOWN_API_KEY` or go grab one from the service. You'll need this in environment variables.
 - **PageHelmet:** Wraps meta tags and social preview. Provider lives in `src/main.tsx`, component in `src/Globals/PageHelmet.tsx`. Use `<PageHelmet title="Page" />` in routes for clean titles.
 - **Barrel exports:** We use `index.ts` files everywhere. Prefer importing from `@junkfm` instead of deep paths (see `src/index.ts`).
 - **Structure:** `src/routes` = pages, `src/components` = reusable chunks, `src/Globals` = theme + global styles + utilities, `src/hooks` = reusable logic, `src/assets` = images.

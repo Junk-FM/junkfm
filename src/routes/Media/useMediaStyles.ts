@@ -15,7 +15,7 @@ export const useMediaStyles = createStyles(() => ({
     h1: {
       color: colors.black,
       fontWeight: 700,
-      WebkitTextStroke: `0.026em ${colors.almostWhite}`,
+      WebkitTextStrokeColor: colors.almostWhite,
       lineHeight: '1.25em',
       marginBottom: '0.125em',
     },

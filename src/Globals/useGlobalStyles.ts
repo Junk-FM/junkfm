@@ -147,9 +147,11 @@ export const useGlobalStyles = createStyles(() => ({
     h1: {
       fontFamily: '"Oswald", sans-serif',
       fontSize: 'clamp(4rem, 9vw, 5.5rem)',
-      fontWeight: 700,
+      fontWeight: 800,
       textTransform: 'uppercase',
       marginBlock: '1rem',
+      paintOrder: 'stroke',
+      WebkitTextStrokeWidth: `0.07em`,
     },
     h2: {
       fontFamily: '"Oswald", sans-serif',

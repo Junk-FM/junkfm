@@ -9,8 +9,7 @@ export const useContactStyles = createStyles(() => ({
     background: sectionBackgrounds.contact,
     h1: {
       textAlign: 'center',
-      
-      WebkitTextStroke: `0.026em ${colors.white}`,
+      WebkitTextStrokeColor: colors.white,
     },
   },
   formWrapper: {

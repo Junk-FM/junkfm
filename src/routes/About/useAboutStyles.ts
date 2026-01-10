@@ -9,7 +9,7 @@ export const useAboutStyles = createStyles(() => ({
     minHeight: 'calc(100vh - 200px)',
     h1: {
       color: colors.black,
-      WebkitTextStroke: `0.026em ${colors.almostWhite}`,
+      WebkitTextStrokeColor: colors.almostWhite,
 
     },
     h5: {
