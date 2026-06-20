@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core';
-import { sectionBackgrounds, colors } from '@junkfm';
+import { sectionBackgrounds, colors, mq } from '@junkfm';
 import chroma from 'chroma-js';
 
 export const useScheduleStyles = createStyles(() => ({
@@ -12,7 +12,7 @@ export const useScheduleStyles = createStyles(() => ({
     },
     p: {
       fontFamily: '"Poppins", sans-serif',
-      fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+      fontSize: 'clamp(1.125rem, 3vw, 1.75rem)',
       fontWeight: 500,
       color: colors.yellow,
       paddingBottom: '1rem',
@@ -98,6 +98,30 @@ export const useScheduleStyles = createStyles(() => ({
       fontSize: '1.35rem',
       color: colors.black,
       padding: 0,
+    },
+
+    // ----------------------------------- //
+    // ---------- shows row 768 ---------- //
+    // ----------------------------------- //
+    [mq.customMax(768)]: {
+      h2: {
+        fontSize: '3rem',
+      },
+      h3: {
+        fontSize: '2rem',
+      },
+      h4: {
+        fontSize: '1.5rem',
+      },
+      h5: {
+        fontSize: '1.25rem',
+      },
+      h6: {
+        fontSize: '1rem',
+      },
+      p: {
+        fontSize: '1rem',
+      },
     },
   },
 
